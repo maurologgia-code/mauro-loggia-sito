@@ -1,0 +1,85 @@
+{
+  "intro": "Una selezione di produzioni e progetti che attraversano trent'anni di lavoro tra studio, broadcast e formazione.",
+  "cards": [
+    {
+      "photo": "/images/Registrazione sigla Torino 2006.jpeg",
+      "photo_alt": "Registrazione della sigla musicale dei Giochi Olimpici Invernali di Torino 2006",
+      "badge": "Broadcast internazionale",
+      "title": "Torino 2006 — XX Giochi Olimpici Invernali",
+      "role": "Supervisione audio · Recording · Mix — TOBO",
+      "featured": true,
+      "link_text": "",
+      "link_url": ""
+    },
+    {
+      "photo": "/images/Didattica.png",
+      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
+      "badge": "Formazione",
+      "title": "Scuola APM — 25 anni di Nuove Tecnologie",
+      "role": "Direttore Dipartimento · Docente · Progettista",
+      "featured": false,
+      "link_text": "Visita APM",
+      "link_url": "https://scuolaapm.it/"
+    },
+    {
+      "photo": "/images/Registrazione orchestra dal vivo.jpeg",
+      "photo_alt": "Registrazione di un'orchestra in una chiesa barocca con arpa in primo piano",
+      "badge": "Live recording",
+      "title": "Registrazioni Orchestrali dal vivo",
+      "role": "Recording engineer — chiese, teatri, location storiche",
+      "featured": false,
+      "link_text": "",
+      "link_url": ""
+    },
+    {
+      "photo": "/images/Davanti al mixer.jpeg",
+      "photo_alt": "Mauro Loggia al mixer analogico professionale durante una sessione di mix",
+      "badge": "Discografia",
+      "title": "Il Castello di Atlante — L'ippogrifo",
+      "role": "Recording + Mix — Vinyl Magic",
+      "featured": false,
+      "link_text": "Discogs",
+      "link_url": "https://www.discogs.com/it/release/5693846-Il-Castello-Di-Atlante-LIppogrifo"
+    },
+    {
+      "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",
+      "photo_alt": "Mauro Loggia con cuffie e laptop durante una sessione di registrazione alla Reggia di Venaria",
+      "badge": "Location storica",
+      "title": "Reggia di Venaria Reale",
+      "role": "Recording engineer — UNESCO, Piemonte",
+      "featured": false,
+      "link_text": "",
+      "link_url": ""
+    },
+    {
+      "photo": "/images/Mauro in studio OK.jpeg",
+      "photo_alt": "Studio di registrazione professionale con mixer, DAW e spartito",
+      "badge": "Etichetta discografica",
+      "title": "Cosmonote S.r.l. — Fondatore",
+      "role": "Produttore · Sound engineer · Direttore artistico — Torino 1996–2012",
+      "featured": false,
+      "link_text": "Discogs",
+      "link_url": "https://www.discogs.com/artist/762119"
+    },
+    {
+      "photo": "/images/Rec chitarre.jpeg",
+      "photo_alt": "Sessione di registrazione chitarre in studio professionale",
+      "badge": "Major labels",
+      "title": "Produzioni Major — Sony, Virgin, BMG",
+      "role": "Sound engineer — Vinyl Magic · Synergy Records 1993–1996",
+      "featured": false,
+      "link_text": "",
+      "link_url": ""
+    },
+    {
+      "photo": "/images/Didattica 2.jpeg",
+      "photo_alt": "Mauro Loggia in studio con studenti durante una sessione didattica",
+      "badge": "Masterclass",
+      "title": "Game Audio Design & Music for Film",
+      "role": "Responsabile corso — Scuola APM Saluzzo",
+      "featured": false,
+      "link_text": "Scuola APM",
+      "link_url": "https://scuolaapm.it/"
+    }
+  ]
+}

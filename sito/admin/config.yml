@@ -1,0 +1,179 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: sito/images
+public_folder: /images
+
+locale: it
+
+collections:
+  - name: sezioni
+    label: Sezioni del sito
+    files:
+
+      # ─── HERO ────────────────────────────────────────────────────────────────
+      - name: hero
+        label: "Hero (prima schermata)"
+        file: sito/content/hero.json
+        format: json
+        fields:
+          - label: "Foto principale"
+            name: photo
+            widget: image
+            hint: "Foto verticale o quadrata. Soggetto preferibilmente a destra."
+          - label: "Alt text foto"
+            name: photo_alt
+            widget: string
+          - label: "Ruoli (riga eyebrow)"
+            name: eyebrow
+            widget: string
+            hint: "Es: Sound Engineer · Produttore · Formatore"
+          - label: "Città e regione"
+            name: role_place
+            widget: string
+          - label: "Dal (anno)"
+            name: role_year
+            widget: string
+          - label: "Citazione principale"
+            name: claim
+            widget: string
+            hint: "Breve frase incisiva, senza virgolette (vengono aggiunte automaticamente)"
+          - label: "Descrizione"
+            name: description
+            widget: text
+          - label: "Statistiche"
+            name: stats
+            widget: list
+            fields:
+              - { label: "Valore",        name: value,       widget: string }
+              - { label: "Riga 1 etichetta", name: label_line1, widget: string }
+              - { label: "Riga 2 etichetta", name: label_line2, widget: string }
+
+      # ─── CHI SONO ────────────────────────────────────────────────────────────
+      - name: chi-sono
+        label: "Chi sono"
+        file: sito/content/chi-sono.json
+        format: json
+        fields:
+          - label: "Foto"
+            name: photo
+            widget: image
+          - label: "Alt text foto"
+            name: photo_alt
+            widget: string
+          - label: "Bio — paragrafo 1"
+            name: bio_p1
+            widget: text
+          - label: "Bio — paragrafo 2"
+            name: bio_p2
+            widget: text
+          - label: "Bio estesa (paragrafi aggiuntivi)"
+            name: bio_extended
+            widget: list
+            field: { label: "Paragrafo", name: paragraph, widget: text }
+          - label: "Statistiche"
+            name: stats
+            widget: list
+            fields:
+              - { label: "Valore",    name: value, widget: string }
+              - { label: "Etichetta", name: label, widget: string }
+
+      # ─── SERVIZI ─────────────────────────────────────────────────────────────
+      - name: servizi
+        label: "Servizi"
+        file: sito/content/servizi.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+          - label: "Card servizi"
+            name: cards
+            widget: list
+            fields:
+              - label: "Icona"
+                name: icon
+                widget: select
+                options:
+                  - { label: "Microfono (Recording & Mix)", value: mic }
+                  - { label: "Monitor (Video/Post)", value: monitor }
+                  - { label: "Vinile (Produzione musicale)", value: vinyl }
+                  - { label: "Libro (Formazione)", value: book }
+              - { label: "Titolo — riga 1", name: title_line1, widget: string }
+              - { label: "Titolo — riga 2", name: title_line2, widget: string }
+              - { label: "Descrizione",     name: desc,        widget: text }
+              - { label: "Per chi",         name: target,      widget: string }
+
+      # ─── ESPERIENZA ──────────────────────────────────────────────────────────
+      - name: esperienza
+        label: "Esperienza & Didattica"
+        file: sito/content/esperienza.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+          - label: "Voci della timeline"
+            name: items
+            widget: list
+            fields:
+              - { label: "Periodo",    name: year,     widget: string }
+              - { label: "Titolo",     name: title,    widget: string }
+              - { label: "Sottotitolo (luogo/ruolo)", name: subtitle, widget: string }
+              - { label: "Descrizione", name: desc,    widget: text }
+              - label: "Voce in evidenza?"
+                name: featured
+                widget: boolean
+                default: false
+              - label: "Badge (solo se in evidenza)"
+                name: badge
+                widget: string
+                required: false
+
+      # ─── PORTFOLIO ───────────────────────────────────────────────────────────
+      - name: portfolio
+        label: "Portfolio"
+        file: sito/content/portfolio.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+          - label: "Card portfolio"
+            name: cards
+            widget: list
+            fields:
+              - label: "Foto"
+                name: photo
+                widget: image
+              - { label: "Alt text foto",   name: photo_alt, widget: string }
+              - { label: "Badge categoria", name: badge,     widget: string }
+              - { label: "Titolo",          name: title,     widget: string }
+              - { label: "Ruolo / descrizione", name: role,  widget: string }
+              - label: "Card grande (doppia larghezza)?"
+                name: featured
+                widget: boolean
+                default: false
+              - label: "Testo link (opzionale)"
+                name: link_text
+                widget: string
+                required: false
+              - label: "URL link (opzionale)"
+                name: link_url
+                widget: string
+                required: false
+
+      # ─── STAMPA ──────────────────────────────────────────────────────────────
+      - name: stampa
+        label: "Stampa & Riconoscimenti"
+        file: sito/content/stampa.json
+        format: json
+        fields:
+          - label: "Citazioni stampa"
+            name: items
+            widget: list
+            fields:
+              - { label: "Citazione", name: quote,  widget: text }
+              - { label: "Fonte",     name: source, widget: string }
+              - { label: "Data/anno", name: year,   widget: string }

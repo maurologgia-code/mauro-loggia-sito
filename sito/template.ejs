@@ -1,0 +1,565 @@
+<%
+/* Mappa icone SVG per le service card */
+const svgIcons = {
+  mic:     '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>',
+  monitor: '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+  vinyl:   '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
+  book:    '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>'
+};
+
+const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+%><!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mauro Loggia — Sound Engineer, Produttore, Formatore | Saluzzo</title>
+  <meta name="description" content="Sound engineer e formatore con trent'anni di esperienza. Produzione musicale, postproduzione audio/video, broadcasting e formazione specialistica. Autore della sigla olimpica di Torino 2006. Direttore Dipartimento Nuove Tecnologie, Scuola APM Saluzzo.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maurologgia.it/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://maurologgia.it/">
+  <meta property="og:title"       content="Mauro Loggia — Sound Engineer, Produttore, Formatore">
+  <meta property="og:description" content="Trent'anni tra studio, broadcast e aula. Consulenza tecnica e formazione professionale nel settore audio, video e musicale.">
+  <meta property="og:image"       content="https://maurologgia.it/og-image.jpg">
+  <meta property="og:locale"      content="it_IT">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Mauro Loggia — Sound Engineer, Produttore, Formatore">
+  <meta name="twitter:description" content="Trent'anni tra studio, broadcast e aula.">
+  <meta name="twitter:image"       content="https://maurologgia.it/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://maurologgia.it/#person",
+        "name": "Mauro Loggia",
+        "jobTitle": "Sound Engineer, Produttore Musicale, Formatore",
+        "email": "mauro.loggia@gmail.com",
+        "birthDate": "1971-12-06",
+        "nationality": "IT",
+        "url": "https://maurologgia.it/",
+        "image": "https://maurologgia.it/img/mauro-loggia-hero.jpg",
+        "sameAs": [
+          "https://www.facebook.com/mauro.loggia/",
+          "https://www.linkedin.com/in/mauro-loggia-b241233/",
+          "https://www.discogs.com/artist/762119"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Scuola di Alto Perfezionamento Musicale",
+          "url": "https://scuolaapm.it/"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <!-- NAVIGAZIONE -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Mauro Loggia — torna in cima">
+        Mauro Loggia<span>.</span>
+      </a>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav__links" role="list">
+          <li><a href="#chi-sono"   class="nav__link">Chi sono</a></li>
+          <li><a href="#servizi"    class="nav__link">Servizi</a></li>
+          <li><a href="#esperienza" class="nav__link">Esperienza</a></li>
+          <li><a href="#portfolio"  class="nav__link">Portfolio</a></li>
+          <li><a href="#stampa"     class="nav__link">Stampa</a></li>
+          <li><a href="#contatti"   class="nav__cta">Contattami</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle"
+              aria-label="Apri il menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav__mobile" aria-label="Menu mobile">
+      <a href="#chi-sono"   class="nav__link">Chi sono</a>
+      <a href="#servizi"    class="nav__link">Servizi</a>
+      <a href="#esperienza" class="nav__link">Esperienza</a>
+      <a href="#portfolio"  class="nav__link">Portfolio</a>
+      <a href="#stampa"     class="nav__link">Stampa</a>
+      <a href="#contatti"   class="nav__cta">Contattami</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- 1. HERO -->
+    <section id="hero" class="hero" aria-label="Introduzione">
+      <div class="hero__content">
+        <span class="hero__eyebrow"><%- hero.eyebrow %></span>
+        <h1 class="hero__name">Mauro<br>Loggia</h1>
+        <p class="hero__role">
+          <%- hero.role_place %> —
+          <span><%- hero.role_year %></span>
+        </p>
+        <p class="hero__claim">"<%- hero.claim %>"</p>
+        <p class="hero__desc"><%- hero.description %></p>
+
+        <div class="hero__actions">
+          <a href="#contatti" class="btn btn--primary">
+            Scrivimi
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="cv/Mauro-Loggia-CV.pdf" download class="btn btn--outline"
+             aria-label="Scarica il curriculum vitae in formato PDF">
+            Scarica CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero__stats" aria-label="Dati principali">
+          <% hero.stats.forEach(function(stat) { %>
+          <div class="hero__stat">
+            <span class="hero__stat-value"><%- stat.value %></span>
+            <span class="hero__stat-label"><%- stat.label_line1 %><br><%- stat.label_line2 %></span>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+
+      <div class="hero__image-wrap">
+        <img src="<%- encodeURI(hero.photo) %>"
+             alt="<%- hero.photo_alt %>"
+             width="800" height="900"
+             loading="eager" fetchpriority="high">
+      </div>
+    </section>
+
+
+    <!-- Separatore waveform -->
+    <div class="waveform-divider" aria-hidden="true">
+      <svg class="waveform-svg" viewBox="0 0 800 48" preserveAspectRatio="xMidYMid meet">
+        <rect class="waveform-bar" x="0"   width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="10"  width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="20"  width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="30"  width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="40"  width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="50"  width="6" y="16" height="16"/>
+        <rect class="waveform-bar" x="60"  width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="70"  width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="80"  width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="90"  width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="100" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="110" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="120" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="130" width="6" y="12" height="24"/>
+        <rect class="waveform-bar" x="140" width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="150" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="160" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="170" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="180" width="6" y="16" height="16"/>
+        <rect class="waveform-bar" x="190" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="200" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="210" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="220" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="230" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="240" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="250" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="260" width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="270" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="280" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="290" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="300" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="310" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="320" width="6" y="12" height="24"/>
+        <rect class="waveform-bar" x="330" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="340" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="350" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="360" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="370" width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="380" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="390" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="400" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="410" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="420" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="430" width="6" y="16" height="16"/>
+        <rect class="waveform-bar" x="440" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="450" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="460" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="470" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="480" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="490" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="500" width="6" y="12" height="24"/>
+        <rect class="waveform-bar" x="510" width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="520" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="530" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="540" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="550" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="560" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="570" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="580" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="590" width="6" y="16" height="16"/>
+        <rect class="waveform-bar" x="600" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="610" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="620" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="630" width="6" y="20" height="8"/>
+        <rect class="waveform-bar" x="640" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="650" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="660" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="670" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="680" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="690" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="700" width="6" y="12" height="24"/>
+        <rect class="waveform-bar" x="710" width="6" y="16" height="16"/>
+        <rect class="waveform-bar" x="720" width="6" y="8"  height="32"/>
+        <rect class="waveform-bar" x="730" width="6" y="4"  height="40"/>
+        <rect class="waveform-bar" x="740" width="6" y="18" height="12"/>
+        <rect class="waveform-bar" x="750" width="6" y="10" height="28"/>
+        <rect class="waveform-bar" x="760" width="6" y="6"  height="36"/>
+        <rect class="waveform-bar" x="770" width="6" y="2"  height="44"/>
+        <rect class="waveform-bar" x="780" width="6" y="14" height="20"/>
+        <rect class="waveform-bar" x="790" width="6" y="20" height="8"/>
+      </svg>
+    </div>
+
+
+    <!-- 2. CHI SONO -->
+    <section id="chi-sono" class="section" aria-labelledby="chi-sono-title">
+      <div class="container">
+        <span class="section__label reveal">Profilo</span>
+        <h2 class="section__title reveal reveal--delay-1" id="chi-sono-title">Chi sono</h2>
+
+        <div class="about__grid">
+          <div class="about__image-wrap reveal reveal--left">
+            <img src="<%- encodeURI(chiSono.photo) %>"
+                 alt="<%- chiSono.photo_alt %>"
+                 width="600" height="800" loading="lazy">
+          </div>
+
+          <div class="about__text">
+            <div class="about__bio reveal">
+              <p><%- chiSono.bio_p1 %></p>
+              <p><%- chiSono.bio_p2 %></p>
+            </div>
+
+            <div class="about__expander reveal reveal--delay-1">
+              <button class="about__expander-btn"
+                      aria-expanded="false"
+                      aria-controls="bio-estesa">
+                <span class="expander-label">Leggi di più</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              <div id="bio-estesa" class="about__bio-extended" role="region" aria-label="Biografia estesa">
+                <div class="about__bio-extended-inner">
+                  <% chiSono.bio_extended.forEach(function(par) { %>
+                  <p><%- par %></p>
+                  <% }); %>
+                </div>
+              </div>
+            </div>
+
+            <div class="about__stats reveal reveal--delay-2" aria-label="Dati chiave">
+              <% chiSono.stats.forEach(function(stat) { %>
+              <div class="about__stat">
+                <span class="about__stat-value"><%- stat.value %></span>
+                <span class="about__stat-label"><%- stat.label %></span>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3. SERVIZI -->
+    <section id="servizi" class="section section--alt" aria-labelledby="servizi-title">
+      <div class="container">
+        <span class="section__label reveal">Cosa faccio</span>
+        <h2 class="section__title reveal reveal--delay-1" id="servizi-title">Servizi di consulenza</h2>
+        <p class="section__intro reveal reveal--delay-2"><%- servizi.intro %></p>
+
+        <div class="services__grid">
+          <% servizi.cards.forEach(function(card, i) { %>
+          <article class="service-card reveal reveal--delay-<%= i+1 %>">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><%- svgIcons[card.icon] || svgIcons.mic %></svg>
+            </div>
+            <h3 class="service-card__title"><%- card.title_line1 %><br><%- card.title_line2 %></h3>
+            <p class="service-card__desc"><%- card.desc %></p>
+            <p class="service-card__target"><strong>Per:</strong> <%- card.target %></p>
+            <a href="#contatti" class="service-card__cta">
+              Parliamone
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. ESPERIENZA -->
+    <section id="esperienza" class="section" aria-labelledby="esperienza-title">
+      <div class="container">
+        <span class="section__label reveal">Percorso</span>
+        <h2 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza & Didattica</h2>
+        <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
+
+        <div class="timeline reveal">
+          <% esperienza.items.forEach(function(item) { %>
+          <article class="timeline__item<%= item.featured ? ' timeline__item--featured' : '' %>">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <% if (item.featured && item.badge) { %>
+            <span class="timeline__badge"><%- item.badge %></span>
+            <% } %>
+            <time class="timeline__year"><%- item.year %></time>
+            <h3 class="timeline__title"><%- item.title %></h3>
+            <p class="timeline__subtitle"><%- item.subtitle %></p>
+            <p class="timeline__desc"><%- item.desc %></p>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. PORTFOLIO -->
+    <section id="portfolio" class="section section--alt" aria-labelledby="portfolio-title">
+      <div class="container">
+        <span class="section__label reveal">Lavori selezionati</span>
+        <h2 class="section__title reveal reveal--delay-1" id="portfolio-title">Portfolio</h2>
+        <p class="section__intro reveal reveal--delay-2"><%- portfolio.intro %></p>
+
+        <div class="portfolio__grid">
+          <% portfolio.cards.forEach(function(card, i) {
+             const delay = (i % 3) + 1;
+             const featuredClass = card.featured ? ' portfolio__card--featured' : '';
+          %>
+          <article class="portfolio__card<%= featuredClass %> reveal reveal--delay-<%= i === 0 ? '' : delay %>">
+            <img src="<%- encodeURI(card.photo) %>"
+                 alt="<%- card.photo_alt %>"
+                 width="<%= card.featured ? '1200' : '600' %>"
+                 height="<%= card.featured ? '600' : '450' %>"
+                 loading="lazy">
+            <div class="portfolio__overlay">
+              <span class="portfolio__badge"><%- card.badge %></span>
+              <h3 class="portfolio__title"><%- card.title %></h3>
+              <p class="portfolio__role"><%- card.role %></p>
+              <% if (card.link_text && card.link_url) { %>
+              <a href="<%- card.link_url %>"
+                 class="portfolio__link"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="<%- card.link_text %> (apre in una nuova finestra)">
+                <%- card.link_text %>
+                <%- extLink %>
+              </a>
+              <% } %>
+            </div>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 6. STAMPA -->
+    <section id="stampa" class="section" aria-labelledby="stampa-title">
+      <div class="container">
+        <span class="section__label reveal">Rassegna stampa</span>
+        <h2 class="section__title reveal reveal--delay-1" id="stampa-title">Stampa & Riconoscimenti</h2>
+
+        <div class="press__grid">
+          <% stampa.items.forEach(function(item, i) { %>
+          <article class="press__card reveal reveal--delay-<%= i+1 %>">
+            <div class="press__quote-mark" aria-hidden="true">"</div>
+            <blockquote class="press__quote"><%- item.quote %></blockquote>
+            <footer class="press__meta">
+              <div>
+                <span class="press__source"><%- item.source %></span>
+                <span class="press__year"> — <%- item.year %></span>
+              </div>
+            </footer>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 7. CONTATTI -->
+    <section id="contatti" class="section section--alt" aria-labelledby="contatti-title">
+      <div class="container">
+        <span class="section__label reveal">Parliamo</span>
+        <h2 class="section__title reveal reveal--delay-1" id="contatti-title">Contatti</h2>
+
+        <div class="contact__grid">
+          <div class="contact__form reveal">
+            <form action="https://formspree.io/f/PLACEHOLDER" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="Contatto dal sito — maurologgia.it">
+
+              <div class="form__group">
+                <label class="form__label" for="nome">Nome e cognome</label>
+                <input class="form__input" type="text" id="nome" name="nome"
+                       autocomplete="name" required aria-required="true" placeholder="Il tuo nome">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="email">Email</label>
+                <input class="form__input" type="email" id="email" name="email"
+                       autocomplete="email" required aria-required="true" placeholder="la.tua@email.com">
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="messaggio">Messaggio</label>
+                <textarea class="form__textarea" id="messaggio" name="messaggio"
+                          required aria-required="true"
+                          placeholder="Raccontami il tuo progetto o la tua richiesta…"
+                          rows="5"></textarea>
+              </div>
+
+              <div class="form__feedback" role="alert" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn--primary form__submit">
+                Invia messaggio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact__info reveal reveal--delay-1">
+            <div>
+              <h3 class="contact__heading">Lavoriamo insieme</h3>
+              <p class="contact__subtext">
+                Sono disponibile per consulenze tecniche, produzioni audio, registrazioni live e percorsi formativi personalizzati. Scrivimi per discutere il tuo progetto.
+              </p>
+            </div>
+            <div>
+              <p class="contact__detail">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <a href="mailto:mauro.loggia@gmail.com">mauro.loggia@gmail.com</a>
+              </p>
+              <p class="contact__detail" style="margin-top: var(--space-xs)">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Saluzzo (CN), Piemonte — Italia
+              </p>
+            </div>
+            <div class="contact__cv">
+              <a href="cv/Mauro-Loggia-CV.pdf" download class="btn btn--outline"
+                 aria-label="Scarica il curriculum vitae in formato PDF">
+                Scarica il CV
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
+            </div>
+            <div>
+              <p class="contact__subtext" style="margin-bottom: var(--space-sm)">Profili online</p>
+              <div class="contact__socials">
+                <a href="https://www.linkedin.com/in/mauro-loggia-b241233/" class="contact__social-link"
+                   target="_blank" rel="noopener noreferrer" aria-label="Profilo LinkedIn (apre in nuova finestra)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                  LinkedIn
+                </a>
+                <a href="https://www.facebook.com/mauro.loggia/" class="contact__social-link"
+                   target="_blank" rel="noopener noreferrer" aria-label="Profilo Facebook (apre in nuova finestra)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                  Facebook
+                </a>
+                <a href="https://www.discogs.com/artist/762119" class="contact__social-link"
+                   target="_blank" rel="noopener noreferrer" aria-label="Profilo Discogs (apre in nuova finestra)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  Discogs
+                </a>
+                <a href="https://scuolaapm.it/" class="contact__social-link"
+                   target="_blank" rel="noopener noreferrer" aria-label="Sito Scuola APM (apre in nuova finestra)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="fill:none">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                  Scuola APM
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Mauro Loggia</span>
+        <p class="footer__copy">© <span id="footer-year"></span> Mauro Loggia. Tutti i diritti riservati.</p>
+        <nav class="footer__links" aria-label="Link footer">
+          <a href="mailto:mauro.loggia@gmail.com" class="footer__link">Email</a>
+          <a href="https://www.linkedin.com/in/mauro-loggia-b241233/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://scuolaapm.it/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">Scuola APM</a>
+        </nav>
+        <a href="#hero" class="footer__back" aria-label="Torna in cima alla pagina">
+          Torna su
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

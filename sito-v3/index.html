@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta -->
+  <title>Mauro Loggia — Sound Engineer · Produttore · Didatta</title>
+  <meta name="description" content="Sound engineer, produttore e formatore con oltre 30 anni di esperienza. Registrazione, mixing, mastering professionale a Torino e online. Direttore didattico Scuola APM." />
+  <meta name="author" content="Mauro Loggia" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://maurologgia.it/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Mauro Loggia — Sound Engineer · Produttore · Didatta" />
+  <meta property="og:description" content="30 anni di studio, 27 crediti discografici, Torino 2006. Registrazione, mixing, mastering e formazione audio professionale." />
+  <meta property="og:url"         content="https://maurologgia.it/" />
+  <meta property="og:image"       content="https://maurologgia.it/og-image.jpg" />
+  <meta property="og:locale"      content="it_IT" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Mauro Loggia — Sound Engineer" />
+  <meta name="twitter:description" content="30 anni di studio, 27 crediti discografici, Torino 2006." />
+  <meta name="twitter:image"       content="https://maurologgia.it/og-image.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://maurologgia.it/#person",
+        "name": "Mauro Loggia",
+        "givenName": "Mauro",
+        "familyName": "Loggia",
+        "birthDate": "1971-12-06",
+        "jobTitle": "Sound Engineer, Produttore Musicale, Direttore Didattico",
+        "description": "Sound engineer e produttore musicale con oltre 30 anni di esperienza in registrazione, mixing, mastering e post-produzione. Direttore didattico di Scuola APM, la prima scuola di audio professionale in Italia.",
+        "url": "https://maurologgia.it/",
+        "email": "mauro.loggia@gmail.com",
+        "telephone": "+393474292690",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Torino",
+          "addressRegion": "Piemonte",
+          "addressCountry": "IT"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Scuola APM",
+          "url": "https://www.scuolaapm.it"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/mauro-loggia",
+          "https://www.facebook.com/mauro.loggia",
+          "https://www.discogs.com/artist/762119",
+          "https://www.scuolaapm.it"
+        ],
+        "knowsAbout": ["Sound Engineering","Music Production","Audio Mixing","Audio Mastering","Pro Tools","Live Recording","Audio Education"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://maurologgia.it/#services",
+        "name": "Mauro Loggia — Servizi Audio Professionali",
+        "provider": { "@id": "https://maurologgia.it/#person" },
+        "serviceType": ["Registrazione audio","Mixing","Mastering","Post-produzione","Formazione audio"],
+        "areaServed": { "@type": "Country", "name": "Italy" },
+        "url": "https://maurologgia.it/#servizi"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts (async) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=Outfit:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=Outfit:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Skip link accessibilità -->
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <!-- ========================================================
+       NAVIGAZIONE
+  ======================================================== -->
+  <header>
+    <nav class="nav" aria-label="Navigazione principale">
+      <div class="nav__inner">
+
+        <a href="#" class="nav__logo" aria-label="Mauro Loggia — Homepage">
+          Mauro <em>Loggia</em>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="nav__links" role="list">
+          <li><a href="#chi-sono"  class="nav__link">Chi sono</a></li>
+          <li><a href="#servizi"   class="nav__link">Servizi</a></li>
+          <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+          <li><a href="#carriera"  class="nav__link">Carriera</a></li>
+          <li><a href="#press"     class="nav__link">Press</a></li>
+          <li><a href="#contatti"  class="nav__cta">Contatti</a></li>
+        </ul>
+
+        <!-- Hamburger mobile -->
+        <button class="nav__toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Apri menu di navigazione">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="nav__mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu di navigazione">
+      <ul role="list">
+        <li><a href="#chi-sono"  class="nav__link">Chi sono</a></li>
+        <li><a href="#servizi"   class="nav__link">Servizi</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#carriera"  class="nav__link">Carriera</a></li>
+        <li><a href="#press"     class="nav__link">Press</a></li>
+        <li><a href="#contatti"  class="nav__link">Contatti</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         HERO — ink bg, nome Bodoni gigante, foto
+    ======================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Sound Engineer · Produttore · Didatta</p>
+
+        <h1 class="hero__name reveal" id="hero-title">
+          Mauro<br /><em>Loggia</em>
+        </h1>
+
+        <div class="hero__claim-wrap reveal">
+          <p class="hero__claim">
+            Più di 30 anni a dare forma al suono — in studio, dal vivo, in aula.
+          </p>
+        </div>
+
+        <div class="hero__actions reveal">
+          <a href="#servizi"   class="btn btn--primary">Scopri i servizi</a>
+          <a href="#portfolio" class="btn btn--ghost">Guarda il portfolio</a>
+        </div>
+
+        <div class="hero__stats reveal" aria-label="Statistiche chiave">
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count="30" data-suffix="+">30+</span>
+            <span class="hero__stat-label">anni di esperienza</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count="27" data-suffix="">27</span>
+            <span class="hero__stat-label">crediti discografici</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">2006</span>
+            <span class="hero__stat-label">Olimpiadi Torino</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count="25" data-suffix="+">25+</span>
+            <span class="hero__stat-label">anni Scuola APM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__image-wrap reveal">
+        <img
+          src="../materiali/foto/Mauro%20Loggia%20(hero%3F).jpeg"
+          alt="Mauro Loggia, sound engineer"
+          width="600"
+          height="750"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         MARQUEE TICKER — credenziali in scorrimento
+    ======================================================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Sound Engineering</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Music Production</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Mixing &amp; Mastering</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Live Recording</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Post-produzione</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Torino 2006</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Pro Tools · Logic Pro · Ableton</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Didattica Audio</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Scuola APM</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">27 Crediti Discografici</span>
+        <span class="marquee__sep">◆</span>
+        <!-- duplicato per loop continuo -->
+        <span class="marquee__item">Sound Engineering</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Music Production</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Mixing &amp; Mastering</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Live Recording</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Post-produzione</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Torino 2006</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Pro Tools · Logic Pro · Ableton</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Didattica Audio</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">Scuola APM</span>
+        <span class="marquee__sep">◆</span>
+        <span class="marquee__item">27 Crediti Discografici</span>
+        <span class="marquee__sep">◆</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         CHI SONO — cream/light section
+    ======================================================== -->
+    <section class="section" id="chi-sono" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__layout">
+
+          <!-- Colonna foto (sticky) -->
+          <div class="about__image-col reveal">
+            <div class="about__image-wrap">
+              <img
+                src="../materiali/foto/Mauro in studio OK.jpeg"
+                alt="Mauro Loggia al mixer in studio di registrazione"
+                width="600"
+                height="720"
+                loading="lazy"
+              />
+            </div>
+            <div class="about__image-caption">
+              <span class="about__image-number" data-count="30" data-suffix="+">30+</span>
+              <span class="about__image-number-label">anni di studio</span>
+            </div>
+          </div>
+
+          <!-- Colonna testo -->
+          <div class="reveal">
+            <span class="section__label">Chi sono</span>
+            <h2 class="section__title" id="about-title">Trent'anni<br />di suono.</h2>
+
+            <div class="about__bio">
+              <p>
+                Sono un sound engineer e produttore musicale con oltre 30 anni di esperienza, specializzato in registrazione, mixing, mastering e post-produzione audio. Ho iniziato la mia carriera nel 1993 alla Synergy Records di Torino e da allora ho lavorato con artisti, etichette discografiche, broadcaster e istituzioni in tutta Italia.
+              </p>
+              <p>
+                Tra i momenti più significativi del mio percorso, il progetto per le <strong>Olimpiadi Invernali di Torino 2006</strong>, dove ho contribuito alla produzione audio delle cerimonie ufficiali. Un riconoscimento della fiducia che artisti e istituzioni continuano a riporre nel mio lavoro.
+              </p>
+
+              <div class="about__bio-extended" id="about-bio-extended" aria-hidden="true">
+                <div class="about__bio-extended-inner">
+                  <p>
+                    Dal 2000 sono parte integrante di <strong>Scuola APM</strong> a Saluzzo — la prima scuola di audio professionale in Italia, fondata nel 1988. Qui ricopro il ruolo di Direttore Didattico, formando nuove generazioni di tecnici del suono, produttori e sound designer. Insegnare mi ha reso un professionista migliore: spiegare richiede una comprensione più profonda di qualsiasi tecnica.
+                  </p>
+                  <p>
+                    Conosco Pro Tools dall'anno della sua uscita — il 1994 — e ho seguito l'intera evoluzione del digitale nel mondo dell'audio professionale. Non mi lego a strumenti o metodologie per abitudine; scelgo sempre il percorso che serve il progetto.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about__expander">
+                <button class="about__expander-btn" aria-expanded="false" aria-controls="about-bio-extended">
+                  <span class="expander-label">Leggi di più</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Statistiche 2×2 -->
+            <div class="about__stats" aria-label="Dati chiave">
+              <div class="about__stat">
+                <span class="about__stat-value">95/100</span>
+                <span class="about__stat-label">Diploma APM — 1992</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-value">Pro Tools</span>
+                <span class="about__stat-label">dal 1994 — year one</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-value">APM</span>
+                <span class="about__stat-label">Direttore Didattico</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-value">Torino</span>
+                <span class="about__stat-label">base + remote</span>
+              </div>
+            </div>
+
+            <div class="about__links">
+              <a href="cv/Mauro-Loggia-CV.pdf" class="btn btn--ghost-light" download>
+                Scarica CV
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 2v8m0 0l-3-3m3 3l3-3M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="https://www.discogs.com/artist/762119" class="btn btn--ghost-light" target="_blank" rel="noopener noreferrer">
+                Discogs
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M5.5 2H2v10h10V8.5M9 2h3v3M7 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SERVIZI — dark section, card numerate
+    ======================================================== -->
+    <section class="section section--dark" id="servizi" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Cosa faccio</span>
+          <h2 class="section__title" id="services-title">Servizi<br />professionali.</h2>
+          <p class="section__intro">Dall'idea al master finale: un interlocutore unico per ogni fase del progetto audio.</p>
+        </header>
+
+        <div class="services__grid">
+
+          <article class="service-card reveal" aria-labelledby="svc-1-title">
+            <span class="service-card__num" aria-hidden="true">01</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 2v2M10 16v2M2 10h2M16 10h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-1-title">Registrazione</h3>
+            <p class="service-card__desc">Sessioni multi-traccia ad alta risoluzione per solisti, ensemble, band e orchestre. Microfonazione, pre-amplificazione e acquisizione in Pro Tools.</p>
+            <p class="service-card__target">Per: <strong>artisti · etichette · ensemble</strong></p>
+          </article>
+
+          <article class="service-card reveal" aria-labelledby="svc-2-title">
+            <span class="service-card__num" aria-hidden="true">02</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="6" width="3" height="8" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="7" y="4" width="3" height="10" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="12" y="5" width="3" height="9" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-2-title">Mixing</h3>
+            <p class="service-card__desc">Bilanciamento, elaborazione e spazializzazione per un mix che funziona su qualsiasi sistema d'ascolto. Approccio ibrido analogico-digitale.</p>
+            <p class="service-card__target">Per: <strong>stereo · stem · Dolby Atmos</strong></p>
+          </article>
+
+          <article class="service-card reveal" aria-labelledby="svc-3-title">
+            <span class="service-card__num" aria-hidden="true">03</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7 10c0-1.657 1.343-3 3-3s3 1.343 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-3-title">Mastering</h3>
+            <p class="service-card__desc">Finalizzazione del master per streaming, vinile e CD. Loudness targeting LUFS, ISRC, metadata e DDP per la stampa fisica.</p>
+            <p class="service-card__target">Per: <strong>streaming · vinile · CD/DDP</strong></p>
+          </article>
+
+          <article class="service-card reveal" aria-labelledby="svc-4-title">
+            <span class="service-card__num" aria-hidden="true">04</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="4" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 7h8M6 10h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M10 14v3M7 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-4-title">Post-produzione</h3>
+            <p class="service-card__desc">Sound design, montaggio e mix per video, documentari, spot e podcast. Esperienza con pipeline broadcast RAI e produzioni audiovisive professionali.</p>
+            <p class="service-card__target">Per: <strong>video · broadcast · podcast</strong></p>
+          </article>
+
+          <article class="service-card reveal" aria-labelledby="svc-5-title">
+            <span class="service-card__num" aria-hidden="true">05</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 2l2 5h5l-4 3 1.5 5L10 12l-4.5 3L7 10 3 7h5l2-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-5-title">Produzione musicale</h3>
+            <p class="service-card__desc">Arrangiamento e produzione di brani originali. Dalla demo al prodotto finito, con attenzione alla direzione artistica e alla coerenza stilistica.</p>
+            <p class="service-card__target">Per: <strong>artisti · label · sync</strong></p>
+          </article>
+
+          <article class="service-card reveal" aria-labelledby="svc-6-title">
+            <span class="service-card__num" aria-hidden="true">06</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L7 6l5 7 3-4 3 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" id="svc-6-title">Formazione</h3>
+            <p class="service-card__desc">Corsi individuali per tecnici del suono, produttori e musicisti. Online e in presenza. 25+ anni di insegnamento alla Scuola APM alle spalle.</p>
+            <p class="service-card__target">Per: <strong>online · in presenza · Pro Tools</strong></p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PORTFOLIO — dark section, griglia asimmetrica
+    ======================================================== -->
+    <section class="section section--dark" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Lavori selezionati</span>
+          <h2 class="section__title" id="portfolio-title">Il suono<br />nel tempo.</h2>
+        </header>
+      </div>
+
+      <div class="portfolio__grid" role="list">
+
+        <!-- Card 1 — featured (span 4) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-1-title">
+          <img src="../materiali/foto/Registrazione sigla Torino 2006.jpeg" alt="Sessione di registrazione per la sigla delle Olimpiadi Invernali Torino 2006" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">2006 · Broadcast · Istituzionale</span>
+            <h3 class="portfolio__title" id="proj-1-title">Olimpiadi Invernali Torino 2006</h3>
+            <p class="portfolio__role">Produzione audio · Cerimonie ufficiali · Scala internazionale</p>
+          </div>
+        </article>
+
+        <!-- Card 2 (span 2) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-2-title">
+          <img src="../materiali/foto/Registrazione orchestra dal vivo.jpeg" alt="Registrazione di orchestra dal vivo in chiesa barocca" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">Classica · Live</span>
+            <h3 class="portfolio__title" id="proj-2-title">Registrazioni orchestrali</h3>
+            <p class="portfolio__role">Multi-traccia · Location acusticamente significative</p>
+          </div>
+        </article>
+
+        <!-- Card 3 (span 2) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-3-title">
+          <img src="../materiali/foto/Davanti al mixer.jpeg" alt="Console analogica in studio durante una sessione" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">1996–2012 · Studio</span>
+            <h3 class="portfolio__title" id="proj-3-title">Cosmonote Studio</h3>
+            <p class="portfolio__role">House engineer e produttore · 16 anni</p>
+          </div>
+        </article>
+
+        <!-- Card 4 (span 2) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-4-title">
+          <img src="../materiali/foto/Registrazione Reggia di Venaria 1.jpeg" alt="Registrazione alla Reggia di Venaria con cuffie e laptop" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">2019 · Location</span>
+            <h3 class="portfolio__title" id="proj-4-title">Reggia di Venaria</h3>
+            <p class="portfolio__role">Registrazione · Gestione acustica complessa</p>
+          </div>
+        </article>
+
+        <!-- Card 5 (span 2) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-5-title">
+          <img src="../materiali/foto/Shooting video Torino 2006.jpeg" alt="Sessione di riprese video Torino 2006" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">2006 · Post-produzione</span>
+            <h3 class="portfolio__title" id="proj-5-title">Olimpiadi — Post-produzione</h3>
+            <p class="portfolio__role">Sound design · Contenuti audiovisivi ufficiali</p>
+          </div>
+        </article>
+
+        <!-- Card 6 (span 3) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-6-title">
+          <img src="../materiali/foto/Didattica.png" alt="Mauro Loggia in aula davanti a uno schermo Pro Tools" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">2000→ · Didattica</span>
+            <h3 class="portfolio__title" id="proj-6-title">Scuola APM — Direzione Didattica</h3>
+            <p class="portfolio__role">25+ anni alla guida della prima scuola audio d'Italia</p>
+          </div>
+        </article>
+
+        <!-- Card 7 (span 3) -->
+        <article class="portfolio__card" role="listitem" aria-labelledby="proj-7-title">
+          <img src="../materiali/foto/Registrazione multitraccia dal vivo.jpeg" alt="Setup di registrazione multitraccia dal vivo" loading="lazy" />
+          <div class="portfolio__overlay">
+            <span class="portfolio__badge">1993–2026 · 27 crediti</span>
+            <h3 class="portfolio__title" id="proj-7-title">Discografia</h3>
+            <p class="portfolio__role">Kina · Secret Cinema · Ajad · Il Castello di Atlante · e altri</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="container">
+        <div class="portfolio__footer reveal">
+          <a href="https://www.discogs.com/artist/762119" class="btn btn--outline-light" target="_blank" rel="noopener noreferrer">
+            Tutti i crediti su Discogs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M5.5 2H2v10h10V8.5M9 2h3v3M7 7l5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CARRIERA — cream/light section, timeline
+    ======================================================== -->
+    <section class="section" id="carriera" aria-labelledby="career-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Percorso</span>
+          <h2 class="section__title" id="career-title">Una carriera<br />costruita in studio.</h2>
+        </header>
+
+        <ol class="timeline" aria-label="Cronologia della carriera">
+
+          <li class="timeline__item timeline__item--featured reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">2000</span>
+              <span class="timeline__year">2000 → oggi</span>
+              <h3 class="timeline__title">Direttore Didattico — Scuola APM</h3>
+              <p class="timeline__subtitle">Saluzzo (CN) · La prima scuola audio d'Italia</p>
+              <p class="timeline__desc">Progettazione curricolare e direzione dei corsi di sound engineering, produzione musicale e sound design. Migliaia di tecnici e produttori formati in oltre 25 anni.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item timeline__item--featured reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">2006</span>
+              <span class="timeline__badge">Progetto di punta</span>
+              <span class="timeline__year">2006</span>
+              <h3 class="timeline__title">Olimpiadi Invernali Torino 2006</h3>
+              <p class="timeline__subtitle">Torino · XX Giochi Olimpici Invernali</p>
+              <p class="timeline__desc">Produzione audio per le cerimonie ufficiali dei Giochi. Gestione tecnica audio su scala internazionale per un evento con miliardi di spettatori.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">1998</span>
+              <span class="timeline__year">1998–1999</span>
+              <h3 class="timeline__title">Docente Audio — RAI</h3>
+              <p class="timeline__subtitle">Torino · Radiotelevisione Italiana</p>
+              <p class="timeline__desc">Formazione tecnica interna per i professionisti audio della sede RAI di Torino sulla transizione verso i sistemi di produzione digitale.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">1996</span>
+              <span class="timeline__year">1996–2012</span>
+              <h3 class="timeline__title">Sound Engineer &amp; Producer — Cosmonote Studio</h3>
+              <p class="timeline__subtitle">Torino · Studio di riferimento torinese</p>
+              <p class="timeline__desc">House engineer e produttore per 16 anni. Sessioni con artisti italiani e internazionali, dalla registrazione al master.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">1996</span>
+              <span class="timeline__year">1996–1999</span>
+              <h3 class="timeline__title">Sound Engineer — Pentaphone</h3>
+              <p class="timeline__subtitle">Torino</p>
+              <p class="timeline__desc">Registrazione, editing e post-produzione per produzioni discografiche e commerciali.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">1993</span>
+              <span class="timeline__year">1993–1996</span>
+              <h3 class="timeline__title">Sound Engineer — Synergy Records</h3>
+              <p class="timeline__subtitle">Torino · Vinyl Magic Records</p>
+              <p class="timeline__desc">Primo incarico professionale. Registrazione e produzione di musica elettronica e dance. Adozione precoce di Pro Tools sin dal 1994.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__item-inner">
+              <span class="timeline__year-bg" aria-hidden="true">1991</span>
+              <span class="timeline__year">1991–1992</span>
+              <h3 class="timeline__title">Diploma — Scuola APM</h3>
+              <p class="timeline__subtitle">Saluzzo (CN) · Voto: 95/100</p>
+              <p class="timeline__desc">Diploma in Sound Engineering con voto 95/100. La stessa scuola dove avrei poi insegnato per oltre 25 anni.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PRESS — cream/light section
+    ======================================================== -->
+    <section class="section" id="press" aria-labelledby="press-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__label">Stampa &amp; Media</span>
+          <h2 class="section__title" id="press-title">Come ne<br />parla la stampa.</h2>
+        </header>
+
+        <div class="press__grid">
+
+          <article class="press__card reveal">
+            <div class="press__quote-mark" aria-hidden="true">"</div>
+            <blockquote class="press__quote">
+              <p>«Un numero record, ogni anno gli iscritti aumentano. Siamo stati la prima scuola in Italia. Era il 1988, una scelta pionieristica.»</p>
+            </blockquote>
+            <div class="press__meta">
+              <span class="press__source">La Stampa</span>
+              <span class="press__year">24 settembre 2019</span>
+            </div>
+          </article>
+
+          <article class="press__card reveal">
+            <div class="press__quote-mark" aria-hidden="true">"</div>
+            <blockquote class="press__quote">
+              <p>«La musica digitale genera un volume d'affari pari al 9% del fatturato mondiale della musica registrata. Una rivoluzione ancora in corso.»</p>
+            </blockquote>
+            <div class="press__meta">
+              <span class="press__source">Repubblica.it</span>
+              <span class="press__year">2006</span>
+            </div>
+          </article>
+
+          <article class="press__card reveal">
+            <div class="press__quote-mark" aria-hidden="true">"</div>
+            <blockquote class="press__quote">
+              <p>«Nuove figure? No, piuttosto un aggiornamento di competenze. Il tecnico del suono moderno deve saper leggere l'evoluzione del mercato.»</p>
+            </blockquote>
+            <div class="press__meta">
+              <span class="press__source">Kataweb Lavoro</span>
+              <span class="press__year">giugno 2006</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="press__discography reveal">
+          <h3 class="press__discography-title">Crediti selezionati</h3>
+          <ul class="press__credits" aria-label="Discografia selezionata">
+            <li><strong>Kina</strong> — <em>Città invisibili</em> · Mix</li>
+            <li><strong>Il Castello di Atlante</strong> — Recording &amp; Mix</li>
+            <li><strong>Ajad</strong> — <em>Tantrica</em> · Recording</li>
+            <li><strong>Secret Cinema</strong> — Production</li>
+            <li><strong>Ishi</strong> — Recording &amp; Mix</li>
+            <li><strong>NEXT</strong> — Production &amp; Mix</li>
+            <li><strong>Alluminogeni</strong> — Recording</li>
+            <li><strong>Fast Weather</strong> — Mix</li>
+            <li><strong>Bestie Rare</strong> — Recording</li>
+            <li><strong>Miki Cino</strong> — Mastering</li>
+          </ul>
+          <a href="https://www.discogs.com/artist/762119" class="press__discogs-link" target="_blank" rel="noopener noreferrer">
+            Tutti i 27 crediti su Discogs →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CONTATTI — dark section
+    ======================================================== -->
+    <section class="section section--dark" id="contatti" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__grid">
+
+          <div class="reveal">
+            <span class="section__label">Parliamo</span>
+            <h2 class="contact__heading" id="contact-title">Hai un<br /><em>progetto?</em></h2>
+            <p class="contact__subtext">Che si tratti di una registrazione, un mix, un master, un percorso formativo o una consulenza — scrivimi. Rispondo entro 24 ore.</p>
+
+            <ul class="contact__details" aria-label="Contatti diretti">
+              <li class="contact__detail">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M2.25 4.5l6.75 4.5 6.75-4.5M2.25 4.5h13.5v9a1 1 0 01-1 1H3.25a1 1 0 01-1-1v-9z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <a href="mailto:mauro.loggia@gmail.com">mauro.loggia@gmail.com</a>
+              </li>
+              <li class="contact__detail">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M3 2h3.5L8 6 6 7.5c.9 1.8 2.2 3.1 4 4L11.5 9.5 15.5 11V14.5a1.5 1.5 0 01-1.5 1.5C5.5 16 3 9.5 3 4a1.5 1.5 0 011.5-2H3z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <a href="tel:+393474292690">+39 347 429 2690</a>
+              </li>
+              <li class="contact__detail">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 1.5a6 6 0 016 6c0 4-6 9-6 9s-6-5-6-9a6 6 0 016-6z" stroke="currentColor" stroke-width="1.25"/>
+                  <circle cx="9" cy="7.5" r="2" stroke="currentColor" stroke-width="1.25"/>
+                </svg>
+                <span>Torino, Piemonte — disponibile da remoto</span>
+              </li>
+            </ul>
+
+            <div class="contact__socials" aria-label="Profili social">
+              <a href="https://www.linkedin.com/in/mauro-loggia" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M4.477 4.143a1.429 1.429 0 100-2.857 1.429 1.429 0 000 2.857zM3.14 6.286h2.677v11.428H3.14V6.286zm4.286 0h2.57v1.564h.036c.357-.677 1.23-1.39 2.534-1.39 2.71 0 3.212 1.784 3.212 4.104v4.75h-2.674v-4.21c0-.999-.018-2.285-1.392-2.285-1.394 0-1.607 1.089-1.607 2.214v4.281H7.426V6.286z"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://www.facebook.com/mauro.loggia" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M17 2H3a1 1 0 00-1 1v14a1 1 0 001 1h7.5v-5.5H8V9.75h2.5V7.75c0-2.487 1.487-3.75 3.75-3.75.732 0 1.5.037 2.25.112v2.638h-1.5c-.712 0-.875.338-.875.875V9.75H16L15.5 12.5H14V18h3a1 1 0 001-1V3a1 1 0 00-1-1z"/>
+                </svg>
+                Facebook
+              </a>
+              <a href="https://www.discogs.com/artist/762119" class="contact__social-link" target="_blank" rel="noopener noreferrer" aria-label="Discogs">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 3a5 5 0 110 10A5 5 0 0110 5zm0 2a3 3 0 100 6 3 3 0 000-6zm0 1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" clip-rule="evenodd"/>
+                </svg>
+                Discogs
+              </a>
+              <a href="https://www.scuolaapm.it" class="contact__social-link" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M3 7l7-4 7 4v9a1 1 0 01-1 1H4a1 1 0 01-1-1V7z" stroke="currentColor" stroke-width="1.25"/>
+                  <path d="M8 16v-5h4v5" stroke="currentColor" stroke-width="1.25"/>
+                </svg>
+                Scuola APM
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__form reveal">
+            <form
+              action="https://formspree.io/f/PLACEHOLDER"
+              method="POST"
+              novalidate
+              aria-label="Modulo di contatto"
+            >
+              <div class="form__group">
+                <label for="nome" class="form__label">Nome e cognome <span aria-hidden="true">*</span></label>
+                <input type="text" id="nome" name="nome" class="form__input" required autocomplete="name" placeholder="Il tuo nome" />
+              </div>
+
+              <div class="form__group">
+                <label for="email" class="form__label">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" class="form__input" required autocomplete="email" placeholder="nome@esempio.it" />
+              </div>
+
+              <div class="form__group">
+                <label for="oggetto" class="form__label">Argomento</label>
+                <select id="oggetto" name="oggetto" class="form__input form__select">
+                  <option value="">Seleziona un argomento…</option>
+                  <option value="registrazione">Registrazione</option>
+                  <option value="mixing">Mixing</option>
+                  <option value="mastering">Mastering</option>
+                  <option value="produzione">Produzione musicale</option>
+                  <option value="post-produzione">Post-produzione</option>
+                  <option value="formazione">Formazione / consulenza</option>
+                  <option value="altro">Altro</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label for="messaggio" class="form__label">Messaggio <span aria-hidden="true">*</span></label>
+                <textarea id="messaggio" name="messaggio" class="form__input form__textarea" required rows="5" placeholder="Raccontami del tuo progetto…"></textarea>
+              </div>
+
+              <div class="form__feedback" style="display:none;" role="alert" aria-live="assertive"></div>
+
+              <button type="submit" class="btn btn--primary btn--full">
+                Invia messaggio
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M2 8h12M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <!-- Honeypot anti-spam -->
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <p class="footer__logo">Mauro <em>Loggia</em></p>
+          <p class="footer__tagline">Sound Engineer · Produttore · Didatta</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <ul role="list">
+            <li><a href="#chi-sono">Chi sono</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#carriera">Carriera</a></li>
+            <li><a href="#press">Press</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+        </nav>
+
+        <a href="mailto:mauro.loggia@gmail.com" class="btn btn--primary">Scrivimi</a>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year">2026</span> Mauro Loggia — P.IVA da inserire</p>
+        <p class="footer__credit">
+          <a href="https://www.scuolaapm.it" target="_blank" rel="noopener noreferrer">Scuola APM</a>
+          — La prima scuola di audio professionale in Italia (1988)
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const y = document.getElementById('footer-year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

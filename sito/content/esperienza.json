@@ -1,0 +1,61 @@
+{
+  "intro": "Trent'anni di lavoro che attraversano studio di registrazione, postproduzione televisiva, produzione discografica e formazione professionale.",
+  "items": [
+    {
+      "year": "1991 – 1992",
+      "title": "Diploma di specializzazione",
+      "subtitle": "Scuola di Alto Perfezionamento Musicale — Saluzzo (CN)",
+      "desc": "Composizione, arrangiamento e programmazione musicale. Votazione 95/100. Materie: acustica, elettroacustica, tecniche di registrazione e mixaggio, produzione audio/video, informatica musicale.",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "1993 – 1996",
+      "title": "Synergy Records",
+      "subtitle": "Tecnico del suono e di registrazione — Chivasso (TO)",
+      "desc": "Oltre venti produzioni discografiche realizzate per etichette major: Sony, Virgin, BMG. Prima esperienza diretta sulla catena produttiva professionale in studio analogico.",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "1996 – 1999",
+      "title": "Pentaphone S.r.l.",
+      "subtitle": "Tecnico di montaggio video digitale + fonico di doppiaggio — Torino",
+      "desc": "Postproduzione audio/video per i principali network televisivi italiani: RAI, Mediaset, Gruppo Cecchi Gori. Sistemi: Scitex Stratasphere (video), Avid Pro Tools (audio).",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "1996 – 2012",
+      "title": "Cosmonote S.r.l. — Fondatore",
+      "subtitle": "Produttore e tecnico del suono — Torino",
+      "desc": "Co-fondazione e direzione tecnica di un'etichetta discografica torinese con produzioni proprie e per conto di etichette major, con distribuzione nazionale e internazionale.",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "1998 – 1999",
+      "title": "RAI — Docente",
+      "subtitle": "Montaggio non lineare video — Torino",
+      "desc": "Due percorsi formativi intensivi da 40 ore per il dipartimento \"Nuovi Apparati\" della RAI su sistemi di montaggio video non lineare.",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "2000 → oggi",
+      "title": "Scuola APM — Responsabile Dipartimento",
+      "subtitle": "Nuove Tecnologie — Saluzzo (CN)",
+      "desc": "Progettazione e direzione dei percorsi in Tecnico del Suono, Produzione Musicale, Produzione Video. Formazione di centinaia di professionisti del settore audio e audiovisivo. Oltre 25 anni di attività continuativa.",
+      "featured": false,
+      "badge": ""
+    },
+    {
+      "year": "2006",
+      "title": "XX Giochi Olimpici Invernali — Torino 2006",
+      "subtitle": "Supervisione, recording e mix — Torino Olympic Broadcasting Organization (TOBO)",
+      "desc": "Produzione completa della sigla musicale ufficiale per la trasmissione internazionale dei Giochi Olimpici Invernali di Torino 2006. Il progetto ha richiesto standard broadcast di livello internazionale e una gestione tecnica integrata dall'acquisizione audio al master finale.",
+      "featured": true,
+      "badge": "Progetto di punta"
+    }
+  ]
+}

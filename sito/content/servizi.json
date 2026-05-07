@@ -1,0 +1,33 @@
+{
+  "intro": "Offro consulenza tecnica e professionale nel settore audio, video e musicale. Ogni progetto è trattato con la cura e l'esperienza maturata in trent'anni di lavoro sul campo.",
+  "cards": [
+    {
+      "icon": "mic",
+      "title_line1": "Recording",
+      "title_line2": "& Mix",
+      "desc": "Registrazione in studio e dal vivo di formazioni musicali di qualsiasi dimensione — dal solista all'orchestra. Missaggio professionale con attenzione all'identità sonora del progetto.",
+      "target": "musicisti, ensemble, etichette indipendenti, produttori"
+    },
+    {
+      "icon": "monitor",
+      "title_line1": "Postproduzione",
+      "title_line2": "Audio / Video",
+      "desc": "Filiera completa dalla presa sonora al master: sound design, mix per cinema e televisione, doppiaggio, sonorizzazione di contenuti digitali e broadcast. Standard professionali maturati con RAI e Mediaset.",
+      "target": "case di produzione, agenzie video, broadcaster, content creator"
+    },
+    {
+      "icon": "vinyl",
+      "title_line1": "Produzione",
+      "title_line2": "Musicale",
+      "desc": "Dalla pre-produzione al master definitivo: arrangiamento, registrazione, editing digitale, mix e mastering. 27 crediti su Discogs, con collaborazioni per Sony, Virgin e BMG.",
+      "target": "artisti emergenti e consolidati, etichette indipendenti"
+    },
+    {
+      "icon": "book",
+      "title_line1": "Formazione",
+      "title_line2": "& Consulenza",
+      "desc": "Masterclass, workshop e percorsi formativi personalizzati in tecniche audio, produzione musicale e video. Consulenza per l'organizzazione di reparti tecnici e workflow professionali.",
+      "target": "istituzioni formative, aziende del settore, professionisti"
+    }
+  ]
+}

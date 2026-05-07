@@ -1,0 +1,11 @@
+[build]
+  command = "cd sito && npm install && node build.js"
+  publish = "sito"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from   = "/admin"
+  to     = "/admin/index.html"
+  status = 200

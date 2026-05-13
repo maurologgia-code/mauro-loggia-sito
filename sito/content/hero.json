@@ -1,15 +1,31 @@
 {
   "photo": "/images/mauro-loggia-hero.jpeg",
-  "photo_alt": "Mauro Loggia — sound engineer e formatore",
-  "eyebrow": "Sound Engineer · Produttore · Formatore",
+  "photo_alt": "Mauro Loggia — Tecnico del suono e Formatore",
+  "eyebrow": "Tecnico del suono · Produttore · Formatore",
   "role_place": "Saluzzo, Piemonte",
   "role_year": "dal 1993",
   "claim": "Trent'anni tra studio, broadcast e aula.",
   "description": "Dalla sigla olimpica di Torino 2006 alla direzione del Dipartimento Nuove Tecnologie della Scuola APM: consulenza tecnica, produzione audio e formazione professionale nel settore musicale e audiovisivo.",
   "stats": [
-    { "value": "30+", "label_line1": "Anni di",        "label_line2": "esperienza" },
-    { "value": "27",  "label_line1": "Crediti",         "label_line2": "discografici" },
-    { "value": "2006","label_line1": "Torino —",        "label_line2": "Olimpiadi invernali" },
-    { "value": "25+", "label_line1": "Anni alla",       "label_line2": "Scuola APM" }
+    {
+      "value": "30+",
+      "label_line1": "Anni di",
+      "label_line2": "esperienza"
+    },
+    {
+      "value": "27",
+      "label_line1": "Crediti",
+      "label_line2": "discografici"
+    },
+    {
+      "value": "2006",
+      "label_line1": "Torino —",
+      "label_line2": "Olimpiadi invernali"
+    },
+    {
+      "value": "25+",
+      "label_line1": "Anni alla",
+      "label_line2": "Scuola APM"
+    }
   ]
 }

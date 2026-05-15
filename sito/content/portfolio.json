@@ -12,16 +12,6 @@
       "link_url": ""
     },
     {
-      "photo": "/images/Didattica.png",
-      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
-      "badge": "Formazione",
-      "title": "Scuola APM — 25 anni di esperienza",
-      "role": "Direttore Dipartimento · Docente · Progettista",
-      "featured": false,
-      "link_text": "Visita APM",
-      "link_url": "https://scuolaapm.it/"
-    },
-    {
       "photo": "/images/Registrazione orchestra dal vivo.jpeg",
       "photo_alt": "Registrazione di un'orchestra in una chiesa barocca con arpa in primo piano",
       "badge": "Live recording",
@@ -30,6 +20,16 @@
       "featured": false,
       "link_text": "",
       "link_url": ""
+    },
+    {
+      "photo": "/images/Didattica.png",
+      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
+      "badge": "Formazione",
+      "title": "Scuola APM — 25 anni di esperienza",
+      "role": "Direttore Dipartimento · Docente · Progettista",
+      "featured": true,
+      "link_text": "Visita APM",
+      "link_url": "https://scuolaapm.it/"
     },
     {
       "photo": "/images/Davanti al mixer.jpeg",
@@ -57,7 +57,7 @@
       "badge": "Produzione Musicale",
       "title": "Cosmonote S.r.l.",
       "role": "Socio fondatore · Produttore · Tecnico del suono — Torino 1996–2012",
-      "featured": false,
+      "featured": true,
       "link_text": "Discogs",
       "link_url": "https://www.discogs.com/artist/762119"
     },

@@ -4,7 +4,7 @@
     {
       "photo": "/images/Registrazione sigla Torino 2006.jpeg",
       "photo_alt": "Registrazione della sigla musicale dei Giochi Olimpici Invernali di Torino 2006",
-      "badge": "Broadcast internazionale",
+      "badge": "Highlight  - Broadcast internazionale",
       "title": "Torino 2006 — XX Giochi Olimpici Invernali",
       "role": "Supervisione audio · Recording · Mix — TOBO",
       "featured": true,
@@ -15,7 +15,7 @@
       "photo": "/images/Didattica.png",
       "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
       "badge": "Formazione",
-      "title": "Scuola APM — 25 anni di Nuove Tecnologie",
+      "title": "Scuola APM — 25 anni di esperienza",
       "role": "Direttore Dipartimento · Docente · Progettista",
       "featured": false,
       "link_text": "Visita APM",
@@ -64,9 +64,9 @@
     {
       "photo": "/images/Rec chitarre.jpeg",
       "photo_alt": "Sessione di registrazione chitarre in studio professionale",
-      "badge": "Major labels",
-      "title": "Produzioni Major — Sony, Virgin, BMG",
-      "role": "Sound engineer — Vinyl Magic · Synergy Records 1993–1996",
+      "badge": "Studio recording",
+      "title": "Produzioni per etichette discogrsfiche",
+      "role": "Sound engineer in studio",
       "featured": false,
       "link_text": "",
       "link_url": ""
@@ -74,9 +74,9 @@
     {
       "photo": "/images/Didattica 2.jpeg",
       "photo_alt": "Mauro Loggia in studio con studenti durante una sessione didattica",
-      "badge": "Masterclass",
-      "title": "Game Audio Design & Music for Film",
-      "role": "Responsabile corso — Scuola APM Saluzzo",
+      "badge": "Didattica",
+      "title": "Masterclass",
+      "role": "Corsi monografici su produzione e postproduzione audio",
       "featured": false,
       "link_text": "Scuola APM",
       "link_url": "https://scuolaapm.it/"

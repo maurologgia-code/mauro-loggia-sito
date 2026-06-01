@@ -2,6 +2,7 @@ backend:
   name: github
   repo: maurologgia-code/mauro-loggia-sito
   branch: main
+  site_domain: maurologgia.netlify.app
 
 media_folder: sito/images
 public_folder: /images

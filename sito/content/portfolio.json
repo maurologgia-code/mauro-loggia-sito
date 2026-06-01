@@ -22,16 +22,6 @@
       "link_url": ""
     },
     {
-      "photo": "/images/Didattica.png",
-      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
-      "badge": "Formazione",
-      "title": "Scuola APM — 25 anni di esperienza",
-      "role": "Direttore Dipartimento · Docente · Progettista",
-      "featured": true,
-      "link_text": "Visita APM",
-      "link_url": "https://scuolaapm.it/"
-    },
-    {
       "photo": "/images/Davanti al mixer.jpeg",
       "photo_alt": "Mauro Loggia al mixer analogico professionale durante una sessione di mix",
       "badge": "Discografia",
@@ -40,6 +30,16 @@
       "featured": false,
       "link_text": "Discogs",
       "link_url": "https://www.discogs.com/it/release/5693846-Il-Castello-Di-Atlante-LIppogrifo"
+    },
+    {
+      "photo": "/images/Didattica.png",
+      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
+      "badge": "Formazione",
+      "title": "Scuola APM — 25 anni di esperienza",
+      "role": "Direttore Dipartimento · Docente · Progettista",
+      "featured": true,
+      "link_text": "Visita APM",
+      "link_url": "https://scuolaapm.it/"
     },
     {
       "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",

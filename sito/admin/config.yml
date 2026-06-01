@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: maurologgia-code/mauro-loggia-sito
   branch: main
 
 media_folder: sito/images

@@ -12,6 +12,16 @@
       "link_url": ""
     },
     {
+      "photo": "/images/Davanti al mixer.jpeg",
+      "photo_alt": "Mauro Loggia al mixer analogico professionale durante una sessione di mix",
+      "badge": "Discografia",
+      "title": "Produzione discografica — Rec, mix e post.",
+      "role": "Recording + Mix — Vinyl Magic",
+      "featured": false,
+      "link_text": "Discogs",
+      "link_url": "https://www.discogs.com/it/release/5693846-Il-Castello-Di-Atlante-LIppogrifo"
+    },
+    {
       "photo": "/images/Registrazione orchestra dal vivo.jpeg",
       "photo_alt": "Registrazione di un'orchestra in una chiesa barocca con arpa in primo piano",
       "badge": "Live recording",
@@ -20,16 +30,6 @@
       "featured": false,
       "link_text": "",
       "link_url": ""
-    },
-    {
-      "photo": "/images/Davanti al mixer.jpeg",
-      "photo_alt": "Mauro Loggia al mixer analogico professionale durante una sessione di mix",
-      "badge": "Discografia",
-      "title": "Il Castello di Atlante — L'ippogrifo",
-      "role": "Recording + Mix — Vinyl Magic",
-      "featured": false,
-      "link_text": "Discogs",
-      "link_url": "https://www.discogs.com/it/release/5693846-Il-Castello-Di-Atlante-LIppogrifo"
     },
     {
       "photo": "/images/Didattica.png",

@@ -5,6 +5,14 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[build.processing]
+  skip_processing = false
+
+[[plugins]]
+  package = "@netlify/plugin-caching"
+  [plugins.inputs]
+    paths = ["sito/node_modules"]
+
 [[redirects]]
   from   = "/admin"
   to     = "/admin/index.html"

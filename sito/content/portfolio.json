@@ -42,6 +42,16 @@
       "link_url": "https://scuolaapm.it/"
     },
     {
+      "photo": "/images/Didattica 2.jpeg",
+      "photo_alt": "Mauro Loggia in studio con studenti durante una sessione didattica",
+      "badge": "Didattica",
+      "title": "Masterclass",
+      "role": "Corsi monografici su produzione e postproduzione audio",
+      "featured": false,
+      "link_text": "Scuola APM",
+      "link_url": "https://scuolaapm.it/"
+    },
+    {
       "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",
       "photo_alt": "Sessione di registrazione alla Reggia di Venaria per il Late Spring Music Festival",
       "badge": "Location recording",
@@ -70,16 +80,6 @@
       "featured": false,
       "link_text": "",
       "link_url": ""
-    },
-    {
-      "photo": "/images/Didattica 2.jpeg",
-      "photo_alt": "Mauro Loggia in studio con studenti durante una sessione didattica",
-      "badge": "Didattica",
-      "title": "Masterclass",
-      "role": "Corsi monografici su produzione e postproduzione audio",
-      "featured": false,
-      "link_text": "Scuola APM",
-      "link_url": "https://scuolaapm.it/"
     }
   ]
 }

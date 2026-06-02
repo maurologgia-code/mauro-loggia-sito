@@ -29,7 +29,7 @@
     {
       "type": "foto",
       "photo": "/images/Microfonazione in sala.jpeg",
-      "caption": "Setup do registrazione in studio"
+      "caption": "Setup di registrazione in studio"
     },
     {
       "type": "foto",
@@ -49,7 +49,7 @@
     {
       "type": "foto",
       "photo": "/images/Registrazione in concerto.jpeg",
-      "caption": "Live recording"
+      "caption": "Registrazione dal vivo"
     },
     {
       "type": "foto",
@@ -90,6 +90,16 @@
       "type": "foto",
       "photo": "/images/img_2190.jpg",
       "caption": "Live sound reinforcement"
+    },
+    {
+      "type": "foto",
+      "photo": "/images/Registrazione trio.jpeg",
+      "caption": "Registrazione trio"
+    },
+    {
+      "type": "foto",
+      "photo": "/images/IMG_8915.jpeg",
+      "caption": "Allestimento orchestra in studio"
     }
   ]
 }

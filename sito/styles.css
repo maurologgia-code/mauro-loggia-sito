@@ -1098,6 +1098,84 @@ button {
   opacity: 1;
 }
 
+/* Video / Audio: cursore e segnaposto */
+.gallery__item--video,
+.gallery__item--audio {
+  cursor: pointer;
+}
+
+.gallery__item--placeholder {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface));
+  color: var(--color-text-muted);
+}
+
+.gallery__placeholder svg {
+  width: 30%;
+  max-width: 64px;
+  height: auto;
+}
+
+/* Pulsante play sui video */
+.gallery__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+
+.gallery__item--video:hover .gallery__play,
+.gallery__item--video:focus-visible .gallery__play {
+  background: var(--color-accent);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.gallery__play svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-left: 3px;
+}
+
+/* Badge audio */
+.gallery__media-badge {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.gallery__media-badge svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 
 /* === PAGINA GALLERIA DEDICATA === */
 .nav--solid {
@@ -1162,6 +1240,37 @@ button {
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__img[hidden],
+.lightbox__embed[hidden] {
+  display: none;
+}
+
+.lightbox__embed--video {
+  width: min(1100px, 92vw);
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
+}
+
+.lightbox__embed--audio {
+  width: min(600px, 92vw);
+}
+
+.lightbox__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox__embed--audio .lightbox__iframe {
+  height: 166px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .lightbox__caption {

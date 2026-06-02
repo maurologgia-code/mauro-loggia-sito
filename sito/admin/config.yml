@@ -182,7 +182,7 @@ collections:
 
       # ─── GALLERIA ────────────────────────────────────────────────────────────
       - name: galleria
-        label: "Galleria fotografica"
+        label: "Galleria multimediale"
         file: sito/content/galleria.json
         format: json
         fields:
@@ -191,21 +191,60 @@ collections:
             widget: text
             required: false
             hint: "Breve testo sotto al titolo della galleria (facoltativo)."
-          - label: "Foto da mostrare"
+          - label: "Elementi della galleria"
             name: items
             widget: list
-            label_singular: "Foto"
-            summary: "{{fields.caption}}"
-            hint: "Aggiungi, rimuovi o trascina per riordinare le foto. Vengono mostrate nell'ordine elencato qui."
-            fields:
+            label_singular: "Elemento"
+            hint: "Aggiungi Foto, Video o Audio. Trascina per riordinare: vengono mostrati nell'ordine elencato qui."
+            types:
               - label: "Foto"
-                name: photo
-                widget: image
-                hint: "Scegli dai media già caricati oppure carica una nuova immagine."
-              - label: "Didascalia (opzionale)"
-                name: caption
-                widget: string
-                required: false
+                name: foto
+                widget: object
+                summary: "Foto — {{fields.caption}}"
+                fields:
+                  - label: "Foto"
+                    name: photo
+                    widget: image
+                    hint: "Scegli dai media già caricati oppure carica una nuova immagine."
+                  - label: "Didascalia (opzionale)"
+                    name: caption
+                    widget: string
+                    required: false
+              - label: "Video"
+                name: video
+                widget: object
+                summary: "Video — {{fields.caption}}"
+                fields:
+                  - label: "Link del video (YouTube o Vimeo)"
+                    name: url
+                    widget: string
+                    hint: "Incolla l'indirizzo, es. https://www.youtube.com/watch?v=… oppure https://vimeo.com/…"
+                  - label: "Copertina (opzionale)"
+                    name: cover
+                    widget: image
+                    required: false
+                    hint: "Anteprima mostrata nella griglia. Per i video YouTube viene presa in automatico se la lasci vuota."
+                  - label: "Didascalia (opzionale)"
+                    name: caption
+                    widget: string
+                    required: false
+              - label: "Audio"
+                name: audio
+                widget: object
+                summary: "Audio — {{fields.caption}}"
+                fields:
+                  - label: "Link SoundCloud"
+                    name: url
+                    widget: string
+                    hint: "Incolla l'indirizzo del brano, es. https://soundcloud.com/utente/titolo"
+                  - label: "Copertina (opzionale)"
+                    name: cover
+                    widget: image
+                    required: false
+                  - label: "Didascalia (opzionale)"
+                    name: caption
+                    widget: string
+                    required: false
 
       # ─── STAMPA ──────────────────────────────────────────────────────────────
       - name: stampa

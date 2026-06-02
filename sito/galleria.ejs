@@ -1,4 +1,45 @@
-<!DOCTYPE html>
+<%
+/* Helper: ricava l'embed e l'anteprima da un elemento della galleria */
+function ytId(u) {
+  const m = (u || '').match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/)|youtu\.be\/)([\w-]{6,})/);
+  return m ? m[1] : '';
+}
+function vimeoId(u) {
+  const m = (u || '').match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  return m ? m[1] : '';
+}
+function mediaInfo(item) {
+  const type = item.type || 'foto';
+  if (type === 'video') {
+    const url = (item.url || '').trim();
+    const cover = item.cover || '';
+    const yt = ytId(url);
+    if (yt) {
+      return { kind: 'video', embed: 'https://www.youtube.com/embed/' + yt + '?rel=0',
+               thumb: cover || ('https://img.youtube.com/vi/' + yt + '/hqdefault.jpg') };
+    }
+    const vi = vimeoId(url);
+    if (vi) {
+      return { kind: 'video', embed: 'https://player.vimeo.com/video/' + vi, thumb: cover };
+    }
+    return { kind: 'video', embed: '', thumb: cover };
+  }
+  if (type === 'audio') {
+    const url = (item.url || '').trim();
+    const cover = item.cover || '';
+    const embed = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(url) +
+                  '&color=%23c89a3a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false';
+    return { kind: 'audio', embed, thumb: cover };
+  }
+  return { kind: 'image', embed: '', thumb: item.photo || '' };
+}
+
+const mediaIcons = {
+  video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>',
+  audio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+  play:  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
+};
+%><!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -92,15 +133,29 @@
 
         <div class="gallery__grid reveal reveal--delay-2">
           <% galleria.items.forEach(function(item, i) {
+             const m = mediaInfo(item);
              const caption = item.caption || '';
+             const hasThumb = !!m.thumb;
+             const aria = m.kind === 'video' ? 'Riproduci video'
+                        : m.kind === 'audio' ? 'Ascolta audio'
+                        : 'Ingrandisci immagine';
           %>
-          <button type="button" class="gallery__item"
-                  data-full="<%- encodeURI(item.photo) %>"
+          <button type="button"
+                  class="gallery__item gallery__item--<%= m.kind %><%= hasThumb ? '' : ' gallery__item--placeholder' %>"
+                  data-kind="<%= m.kind %>"
+                  <% if (m.kind === 'image') { %>data-full="<%- encodeURI(item.photo) %>"<% } else { %>data-embed="<%= m.embed %>"<% } %>
                   data-caption="<%= caption %>"
-                  aria-label="Ingrandisci immagine<%= caption ? ': ' + caption : '' %>">
-            <img src="<%- encodeURI(item.photo) %>"
-                 alt="<%= caption || 'Fotografia della galleria' %>"
-                 loading="lazy">
+                  aria-label="<%= aria %><%= caption ? ': ' + caption : '' %>">
+            <% if (hasThumb) { %>
+            <img src="<%- encodeURI(m.thumb) %>" alt="<%= caption || 'Elemento della galleria' %>" loading="lazy">
+            <% } else { %>
+            <span class="gallery__placeholder"><%- mediaIcons[m.kind] || mediaIcons.video %></span>
+            <% } %>
+            <% if (m.kind === 'video') { %>
+            <span class="gallery__play" aria-hidden="true"><%- mediaIcons.play %></span>
+            <% } else if (m.kind === 'audio') { %>
+            <span class="gallery__media-badge" aria-hidden="true"><%- mediaIcons.audio %></span>
+            <% } %>
             <% if (caption) { %>
             <span class="gallery__caption"><%= caption %></span>
             <% } %>
@@ -159,7 +214,12 @@
       </svg>
     </button>
     <figure class="lightbox__figure">
-      <img class="lightbox__img" src="" alt="">
+      <img class="lightbox__img" src="" alt="" hidden>
+      <div class="lightbox__embed" hidden>
+        <iframe class="lightbox__iframe" src="" title="Contenuto multimediale"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+      </div>
       <figcaption class="lightbox__caption"></figcaption>
     </figure>
     <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Immagine successiva">

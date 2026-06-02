@@ -94,7 +94,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
           <li><a href="#servizi"    class="nav__link">Servizi</a></li>
           <li><a href="#esperienza" class="nav__link">Esperienza</a></li>
           <li><a href="#portfolio"  class="nav__link">Portfolio</a></li>
-          <li><a href="#galleria"   class="nav__link">Galleria</a></li>
+          <li><a href="/galleria"   class="nav__link">Galleria</a></li>
           <li><a href="#stampa"     class="nav__link">Stampa</a></li>
           <li><a href="#contatti"   class="nav__cta">Contattami</a></li>
         </ul>
@@ -111,7 +111,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
       <a href="#servizi"    class="nav__link">Servizi</a>
       <a href="#esperienza" class="nav__link">Esperienza</a>
       <a href="#portfolio"  class="nav__link">Portfolio</a>
-      <a href="#galleria"   class="nav__link">Galleria</a>
+      <a href="/galleria"   class="nav__link">Galleria</a>
       <a href="#stampa"     class="nav__link">Stampa</a>
       <a href="#contatti"   class="nav__cta">Contattami</a>
     </nav>
@@ -398,38 +398,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     </section>
 
 
-    <!-- 6. GALLERIA -->
-    <section id="galleria" class="section" aria-labelledby="galleria-title">
-      <div class="container">
-        <span class="section__label reveal">Immagini</span>
-        <h2 class="section__title reveal reveal--delay-1" id="galleria-title">Galleria</h2>
-        <% if (galleria.intro) { %>
-        <p class="section__intro reveal reveal--delay-2"><%- galleria.intro %></p>
-        <% } %>
-
-        <div class="gallery__grid reveal reveal--delay-2">
-          <% galleria.items.forEach(function(item, i) {
-             const caption = item.caption || '';
-          %>
-          <button type="button" class="gallery__item"
-                  data-full="<%- encodeURI(item.photo) %>"
-                  data-caption="<%= caption %>"
-                  aria-label="Ingrandisci immagine<%= caption ? ': ' + caption : '' %>">
-            <img src="<%- encodeURI(item.photo) %>"
-                 alt="<%= caption || 'Fotografia della galleria' %>"
-                 loading="lazy">
-            <% if (caption) { %>
-            <span class="gallery__caption"><%= caption %></span>
-            <% } %>
-          </button>
-          <% }); %>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 7. STAMPA -->
-    <section id="stampa" class="section section--alt" aria-labelledby="stampa-title">
+    <!-- 6. STAMPA -->
+    <section id="stampa" class="section" aria-labelledby="stampa-title">
       <div class="container">
         <span class="section__label reveal">Rassegna stampa</span>
         <h2 class="section__title reveal reveal--delay-1" id="stampa-title">Stampa & Riconoscimenti</h2>
@@ -452,8 +422,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     </section>
 
 
-    <!-- 8. CONTATTI -->
-    <section id="contatti" class="section" aria-labelledby="contatti-title">
+    <!-- 7. CONTATTI -->
+    <section id="contatti" class="section section--alt" aria-labelledby="contatti-title">
       <div class="container">
         <span class="section__label reveal">Parliamo</span>
         <h2 class="section__title reveal reveal--delay-1" id="contatti-title">Contatti</h2>
@@ -589,29 +559,6 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
       </div>
     </div>
   </footer>
-
-  <!-- LIGHTBOX GALLERIA -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita" hidden>
-    <button type="button" class="lightbox__close" aria-label="Chiudi">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-        <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
-      </svg>
-    </button>
-    <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Immagine precedente">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="15 18 9 12 15 6"/>
-      </svg>
-    </button>
-    <figure class="lightbox__figure">
-      <img class="lightbox__img" src="" alt="">
-      <figcaption class="lightbox__caption"></figcaption>
-    </figure>
-    <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Immagine successiva">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
-    </button>
-  </div>
 
   <script src="script.js"></script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>

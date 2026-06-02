@@ -16,8 +16,15 @@ const data = {
   encodeURI,
 };
 
-const template = fs.readFileSync(path.join(dir, 'template.ejs'), 'utf8');
-const html     = ejs.render(template, data, { filename: path.join(dir, 'template.ejs') });
+/* Pagine da generare: file template .ejs -> file .html in output */
+const pages = [
+  { template: 'template.ejs',  output: 'index.html'    },
+  { template: 'galleria.ejs',  output: 'galleria.html' },
+];
 
-fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
-console.log('✓  index.html generato');
+pages.forEach(({ template, output }) => {
+  const src  = fs.readFileSync(path.join(dir, template), 'utf8');
+  const html = ejs.render(src, data, { filename: path.join(dir, template) });
+  fs.writeFileSync(path.join(dir, output), html, 'utf8');
+  console.log(`✓  ${output} generato`);
+});

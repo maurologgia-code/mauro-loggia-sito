@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galleria — Mauro Loggia | Sound Engineer, Produttore, Formatore</title>
+  <meta name="description" content="Galleria fotografica di Mauro Loggia: momenti di lavoro tra studio di registrazione, riprese dal vivo, produzioni e attività didattiche.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maurologgia.com/galleria">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://maurologgia.com/galleria">
+  <meta property="og:title"       content="Galleria — Mauro Loggia">
+  <meta property="og:description" content="Momenti di lavoro tra studio, palco e aula.">
+  <meta property="og:locale"      content="it_IT">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <!-- NAVIGAZIONE -->
+  <header class="nav nav--solid" role="banner">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Mauro Loggia — torna alla home">
+        Mauro Loggia<span>.</span>
+      </a>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav__links" role="list">
+          <li><a href="/#chi-sono"   class="nav__link">Chi sono</a></li>
+          <li><a href="/#servizi"    class="nav__link">Servizi</a></li>
+          <li><a href="/#esperienza" class="nav__link">Esperienza</a></li>
+          <li><a href="/#portfolio"  class="nav__link">Portfolio</a></li>
+          <li><a href="/galleria"    class="nav__link" aria-current="page">Galleria</a></li>
+          <li><a href="/#stampa"     class="nav__link">Stampa</a></li>
+          <li><a href="/#contatti"   class="nav__cta">Contattami</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle"
+              aria-label="Apri il menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav__mobile" aria-label="Menu mobile">
+      <a href="/#chi-sono"   class="nav__link">Chi sono</a>
+      <a href="/#servizi"    class="nav__link">Servizi</a>
+      <a href="/#esperienza" class="nav__link">Esperienza</a>
+      <a href="/#portfolio"  class="nav__link">Portfolio</a>
+      <a href="/galleria"    class="nav__link" aria-current="page">Galleria</a>
+      <a href="/#stampa"     class="nav__link">Stampa</a>
+      <a href="/#contatti"   class="nav__cta">Contattami</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="section gallery-page" aria-labelledby="galleria-title">
+      <div class="container">
+
+        <a href="/" class="btn btn--outline gallery-page__back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Torna alla home
+        </a>
+
+        <span class="section__label reveal">Immagini</span>
+        <h1 class="section__title reveal reveal--delay-1" id="galleria-title">Galleria</h1>
+        <% if (galleria.intro) { %>
+        <p class="section__intro reveal reveal--delay-2"><%- galleria.intro %></p>
+        <% } %>
+
+        <div class="gallery__grid reveal reveal--delay-2">
+          <% galleria.items.forEach(function(item, i) {
+             const caption = item.caption || '';
+          %>
+          <button type="button" class="gallery__item"
+                  data-full="<%- encodeURI(item.photo) %>"
+                  data-caption="<%= caption %>"
+                  aria-label="Ingrandisci immagine<%= caption ? ': ' + caption : '' %>">
+            <img src="<%- encodeURI(item.photo) %>"
+                 alt="<%= caption || 'Fotografia della galleria' %>"
+                 loading="lazy">
+            <% if (caption) { %>
+            <span class="gallery__caption"><%= caption %></span>
+            <% } %>
+          </button>
+          <% }); %>
+        </div>
+
+        <div class="gallery-page__footer-back">
+          <a href="/" class="btn btn--primary">
+            Torna alla home
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Mauro Loggia</span>
+        <p class="footer__copy">© <span id="footer-year"></span> Mauro Loggia. Tutti i diritti riservati.</p>
+        <nav class="footer__links" aria-label="Link footer">
+          <a href="mailto:mauro.loggia@gmail.com" class="footer__link">Email</a>
+          <a href="https://www.linkedin.com/in/mauro-loggia-b241233/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://scuolaapm.it/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">Scuola APM</a>
+        </nav>
+        <a href="/" class="footer__back" aria-label="Torna alla home">
+          Torna alla home
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX GALLERIA -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Immagine ingrandita" hidden>
+    <button type="button" class="lightbox__close" aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+      </svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Immagine precedente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Immagine successiva">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

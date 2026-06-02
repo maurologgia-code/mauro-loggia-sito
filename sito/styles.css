@@ -1099,6 +1099,29 @@ button {
 }
 
 
+/* === PAGINA GALLERIA DEDICATA === */
+.nav--solid {
+  background-color: rgba(248, 245, 240, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--color-border);
+}
+
+.gallery-page {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+}
+
+.gallery-page__back {
+  margin-bottom: var(--space-lg);
+}
+
+.gallery-page__footer-back {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+
 /* === LIGHTBOX === */
 .lightbox {
   position: fixed;
@@ -1542,7 +1565,8 @@ button {
     --color-border-strong:rgba(240, 237, 232, 0.16);
   }
 
-  .nav.scrolled {
+  .nav.scrolled,
+  .nav--solid {
     background-color: rgba(28, 25, 22, 0.95);
   }
 

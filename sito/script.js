@@ -168,6 +168,77 @@
 })();
 
 
+/* === GALLERIA — LIGHTBOX === */
+(function initGalleryLightbox() {
+  const grid     = document.querySelector('.gallery__grid');
+  const lightbox = document.getElementById('lightbox');
+  if (!grid || !lightbox) return;
+
+  const items = Array.from(grid.querySelectorAll('.gallery__item'));
+  if (!items.length) return;
+
+  const imgEl     = lightbox.querySelector('.lightbox__img');
+  const captionEl = lightbox.querySelector('.lightbox__caption');
+  const btnClose  = lightbox.querySelector('.lightbox__close');
+  const btnPrev   = lightbox.querySelector('.lightbox__nav--prev');
+  const btnNext   = lightbox.querySelector('.lightbox__nav--next');
+
+  let current = 0;
+  let lastFocused = null;
+
+  const render = () => {
+    const el = items[current];
+    const caption = el.dataset.caption || '';
+    imgEl.src = el.dataset.full;
+    imgEl.alt = caption || 'Fotografia della galleria';
+    captionEl.textContent = caption;
+    captionEl.style.display = caption ? '' : 'none';
+  };
+
+  const open = (index) => {
+    current = index;
+    lastFocused = document.activeElement;
+    render();
+    lightbox.hidden = false;
+    requestAnimationFrame(() => lightbox.classList.add('open'));
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  };
+
+  const close = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { lightbox.hidden = true; }, 280);
+    if (lastFocused) lastFocused.focus();
+  };
+
+  const go = (dir) => {
+    current = (current + dir + items.length) % items.length;
+    render();
+  };
+
+  items.forEach((el, i) => el.addEventListener('click', () => open(i)));
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', () => go(-1));
+  btnNext.addEventListener('click', () => go(1));
+
+  // Chiude cliccando sullo sfondo (non sull'immagine o sui pulsanti)
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightbox.querySelector('.lightbox__figure')) {
+      close();
+    }
+  });
+
+  // Tastiera: Esc chiude, frecce navigano
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape')          close();
+    else if (e.key === 'ArrowLeft')  go(-1);
+    else if (e.key === 'ArrowRight')  go(1);
+  });
+})();
+
+
 /* === ACTIVE NAV LINK (scroll spy leggero) === */
 (function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');

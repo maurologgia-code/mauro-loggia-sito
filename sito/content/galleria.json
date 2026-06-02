@@ -1,0 +1,41 @@
+{
+  "intro": "Momenti di lavoro tra studio, palco e aula: una selezione di scatti dietro le quinte di registrazioni, produzioni e attività didattiche.",
+  "items": [
+    {
+      "photo": "/images/Davanti al mixer.jpeg",
+      "caption": "Al banco mixer analogico"
+    },
+    {
+      "photo": "/images/Mauro in studio OK.jpeg",
+      "caption": "In studio di registrazione"
+    },
+    {
+      "photo": "/images/Registrazione orchestra dal vivo.jpeg",
+      "caption": "Registrazione di orchestra dal vivo"
+    },
+    {
+      "photo": "/images/Rec chitarre.jpeg",
+      "caption": "Sessione di registrazione chitarre"
+    },
+    {
+      "photo": "/images/Registrazione pianoforte.jpeg",
+      "caption": "Registrazione di pianoforte"
+    },
+    {
+      "photo": "/images/Microfonazione in sala.jpeg",
+      "caption": "Microfonazione in sala"
+    },
+    {
+      "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",
+      "caption": "Registrazione alla Reggia di Venaria"
+    },
+    {
+      "photo": "/images/Setup registrazione orchestra.jpeg",
+      "caption": "Setup per registrazione orchestrale"
+    },
+    {
+      "photo": "/images/Didattica.png",
+      "caption": "Attività didattica"
+    }
+  ]
+}

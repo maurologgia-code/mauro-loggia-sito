@@ -166,6 +166,33 @@ collections:
                 widget: string
                 required: false
 
+      # ─── GALLERIA ────────────────────────────────────────────────────────────
+      - name: galleria
+        label: "Galleria fotografica"
+        file: sito/content/galleria.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+            required: false
+            hint: "Breve testo sotto al titolo della galleria (facoltativo)."
+          - label: "Foto da mostrare"
+            name: items
+            widget: list
+            label_singular: "Foto"
+            summary: "{{fields.caption}}"
+            hint: "Aggiungi, rimuovi o trascina per riordinare le foto. Vengono mostrate nell'ordine elencato qui."
+            fields:
+              - label: "Foto"
+                name: photo
+                widget: image
+                hint: "Scegli dai media già caricati oppure carica una nuova immagine."
+              - label: "Didascalia (opzionale)"
+                name: caption
+                widget: string
+                required: false
+
       # ─── STAMPA ──────────────────────────────────────────────────────────────
       - name: stampa
         label: "Stampa & Riconoscimenti"

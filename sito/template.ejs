@@ -138,13 +138,15 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="cv/Mauro-Loggia-CV.pdf" download class="btn btn--outline"
+          <% if (impostazioni.cv_file) { %>
+          <a href="<%= impostazioni.cv_file %>" download class="btn btn--outline"
              aria-label="Scarica il curriculum vitae in formato PDF">
             Scarica CV
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
           </a>
+          <% } %>
         </div>
 
         <div class="hero__stats" aria-label="Dati principali">
@@ -485,8 +487,9 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
                 Saluzzo (CN), Piemonte — Italia
               </p>
             </div>
+            <% if (impostazioni.cv_file) { %>
             <div class="contact__cv">
-              <a href="cv/Mauro-Loggia-CV.pdf" download class="btn btn--outline"
+              <a href="<%= impostazioni.cv_file %>" download class="btn btn--outline"
                  aria-label="Scarica il curriculum vitae in formato PDF">
                 Scarica il CV
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -494,6 +497,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
                 </svg>
               </a>
             </div>
+            <% } %>
             <div>
               <p class="contact__subtext" style="margin-bottom: var(--space-sm)">Profili online</p>
               <div class="contact__socials">

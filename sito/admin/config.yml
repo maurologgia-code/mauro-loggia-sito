@@ -14,6 +14,20 @@ collections:
     label: Sezioni del sito
     files:
 
+      # ─── IMPOSTAZIONI / DOCUMENTI ────────────────────────────────────────────
+      - name: impostazioni
+        label: "Impostazioni / Documenti"
+        file: sito/content/impostazioni.json
+        format: json
+        fields:
+          - label: "Curriculum Vitae (PDF)"
+            name: cv_file
+            widget: file
+            required: false
+            media_folder: "/sito/cv"
+            public_folder: "/cv"
+            hint: "Carica qui il CV in PDF. Per aggiornarlo in futuro, sostituisci il file da questo campo: i pulsanti 'Scarica CV' del sito si aggiornano da soli."
+
       # ─── HERO ────────────────────────────────────────────────────────────────
       - name: hero
         label: "Hero (prima schermata)"

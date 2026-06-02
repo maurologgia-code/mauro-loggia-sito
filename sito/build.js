@@ -13,6 +13,7 @@ const data = {
   portfolio:  JSON.parse(fs.readFileSync(path.join(content, 'portfolio.json'), 'utf8')),
   galleria:   JSON.parse(fs.readFileSync(path.join(content, 'galleria.json'),  'utf8')),
   stampa:     JSON.parse(fs.readFileSync(path.join(content, 'stampa.json'),    'utf8')),
+  impostazioni: JSON.parse(fs.readFileSync(path.join(content, 'impostazioni.json'), 'utf8')),
   encodeURI,
 };
 

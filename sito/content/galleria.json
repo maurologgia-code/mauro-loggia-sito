@@ -100,6 +100,11 @@
       "type": "foto",
       "photo": "/images/IMG_8915.jpeg",
       "caption": "Allestimento orchestra in studio"
+    },
+    {
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=kV2LqFiNYTo",
+      "caption": "Sigla delle Olimpiadi di Torino 2006"
     }
   ]
 }

@@ -559,18 +559,6 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function(user) {
-        if (!user) {
-          window.netlifyIdentity.on('login', function() {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
 </body>

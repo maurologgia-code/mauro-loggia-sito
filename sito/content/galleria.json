@@ -2,40 +2,72 @@
   "intro": "Momenti di lavoro tra studio, palco e aula: una selezione di scatti dietro le quinte di registrazioni, produzioni e attività didattiche.",
   "items": [
     {
-      "photo": "/images/Davanti al mixer.jpeg",
-      "caption": "Al banco mixer analogico"
+      "photo": "/images/Mauro in studio.jpeg",
+      "caption": "In studio"
     },
     {
-      "photo": "/images/Mauro in studio OK.jpeg",
-      "caption": "In studio di registrazione"
+      "photo": "/images/Dal vivo.jpeg",
+      "caption": "Dal vivo"
     },
     {
-      "photo": "/images/Registrazione orchestra dal vivo.jpeg",
-      "caption": "Registrazione di orchestra dal vivo"
+      "photo": "/images/Didattica.png",
+      "caption": "In classe"
     },
     {
-      "photo": "/images/Rec chitarre.jpeg",
-      "caption": "Sessione di registrazione chitarre"
+      "photo": "/images/Didattica 2.jpeg",
+      "caption": "Masterclass in studio"
     },
     {
       "photo": "/images/Registrazione pianoforte.jpeg",
-      "caption": "Registrazione di pianoforte"
+      "caption": "Registrazione in studio"
     },
     {
       "photo": "/images/Microfonazione in sala.jpeg",
       "caption": "Microfonazione in sala"
     },
     {
-      "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",
-      "caption": "Registrazione alla Reggia di Venaria"
+      "photo": "/images/Rec produzione in studio.jpeg",
+      "caption": "Produzione pop in studio"
+    },
+    {
+      "photo": "/images/Registrazione sigla Torino 2006.jpeg",
+      "caption": "Shooting in studio"
+    },
+    {
+      "photo": "/images/Registrazione Reggia di Venaria 2.jpeg",
+      "caption": "Location recording"
+    },
+    {
+      "photo": "/images/Registrazione in concerto.jpeg",
+      "caption": "Live recording"
+    },
+    {
+      "photo": "/images/Microfonazione in sala 2.jpeg",
+      "caption": "Microfonazione in sala"
+    },
+    {
+      "photo": "/images/Didattica 3.jpeg",
+      "caption": "Lezione in aula"
+    },
+    {
+      "photo": "/images/Mauro in studio 2.jpeg",
+      "caption": "Registrazione di ensemble in studio"
+    },
+    {
+      "photo": "/images/Registrazione duo arpe.jpeg",
+      "caption": "Registrazione in studio"
+    },
+    {
+      "photo": "/images/Registrazione multitraccia dal vivo.jpeg",
+      "caption": "Live recording multitraccia"
+    },
+    {
+      "photo": "/images/Microfonazione in sala.jpeg",
+      "caption": "Setup di registrazione in studio"
     },
     {
       "photo": "/images/Setup registrazione orchestra.jpeg",
-      "caption": "Setup per registrazione orchestrale"
-    },
-    {
-      "photo": "/images/Didattica.png",
-      "caption": "Attività didattica"
+      "caption": "Setup registrazione orchestra"
     }
   ]
 }

@@ -80,6 +80,14 @@
       "featured": false,
       "link_text": "",
       "link_url": ""
+    },
+    {
+      "featured": false,
+      "photo": "/images/Setup registrazione orchestra.jpeg",
+      "badge": "Registrazione in studio",
+      "photo_alt": "Sala di ripresa con allestimento per registrazione di orchestra",
+      "title": "Studio recording",
+      "role": "Registrazione di grossi ensemble"
     }
   ]
 }

@@ -317,8 +317,8 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(248, 245, 240, 0.8);
-  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  background: rgba(248, 245, 240, 0.66);
+  background: color-mix(in srgb, var(--color-bg) 66%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: calc(var(--z-overlay) - 1);

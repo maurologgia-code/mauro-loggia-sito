@@ -417,14 +417,16 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
             <footer class="press__meta">
               <div>
                 <span class="press__source"><%- item.source %></span>
+                <% if (item.year && String(item.year).trim()) { %>
                 <span class="press__year"> — <%- item.year %></span>
+                <% } %>
               </div>
-              <% if (hasPdf) { %>
-              <span class="press__link">Leggi l'articolo
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </span>
-              <% } %>
             </footer>
+            <% if (hasPdf) { %>
+            <span class="press__link">Leggi l'articolo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+            <% } %>
           </<%= tag %>>
           <% }); %>
         </div>

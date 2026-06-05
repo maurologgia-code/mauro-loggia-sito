@@ -1372,6 +1372,7 @@ button {
 .press__link {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   gap: 0.35rem;
   white-space: nowrap;
 }

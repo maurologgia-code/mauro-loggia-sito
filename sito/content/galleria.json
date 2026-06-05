@@ -100,6 +100,12 @@
       "type": "video",
       "url": "https://www.youtube.com/watch?v=kV2LqFiNYTo",
       "caption": "Sigla delle Olimpiadi di Torino 2006"
+    },
+    {
+      "type": "video",
+      "cover": "",
+      "caption": "Rec e Mix di produzione cantautoriale",
+      "url": "https://www.youtube.com/watch?v=9JH5ROfTdJ8"
     }
   ]
 }

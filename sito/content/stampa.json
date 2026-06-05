@@ -2,18 +2,21 @@
   "items": [
     {
       "quote": "La musica digitale genera un volume d'affari pari all'incirca a quanto si generava nel 2000 con i supporti fisici. A questa tavola allora però partecipavano in migliaia, ora in milioni.",
-      "source": "Repubblica.it",
-      "year": "2006"
+      "source": "La Repubblica",
+      "year": " ",
+      "pdf": "/images/articolo-la-repubblica.pdf"
     },
     {
       "quote": "Siamo stati il primo college residenziale in Italia a formare tecnici. Era il 1988, una scelta pionieristica.",
-      "source": "La Stampa",
-      "year": "24 settembre 2019"
+      "source": "Computer Music & Project Studio",
+      "year": " ",
+      "pdf": "/images/articolo-intervista-cmp.pdf"
     },
     {
       "quote": "Nuove figure professionali? No, il settore delle tecnologie musicali richiede però un costante aggiornamento di chi opera nel settore.",
       "source": "Kataweb — Lavoro",
-      "year": "giugno 2006"
+      "year": " ",
+      "pdf": "/images/articolo-kataweb-lavoro.pdf"
     }
   ]
 }

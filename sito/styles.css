@@ -319,12 +319,15 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--color-bg);
+  background: rgba(248, 245, 240, 0.8);
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   z-index: calc(var(--z-overlay) - 1);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-sm);
   padding: var(--space-xl);
   opacity: 0;
   pointer-events: none;

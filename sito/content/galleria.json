@@ -118,6 +118,16 @@
       "type": "video",
       "url": "https://www.youtube.com/watch?v=HH0KP8rulG4",
       "caption": "Rec & Mix - Pianoforte solo"
+    },
+    {
+      "type": "video",
+      "url": "https://www.youtube.com/shorts/AXu1EVENu7M",
+      "caption": "Rec & Mix - Cello solo"
+    },
+    {
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=GSEVTE-5aZs",
+      "caption": "Rec & Mix - Duo Chitarre"
     }
   ]
 }

@@ -142,7 +142,7 @@
       // Fallback: apre il client email
       const subject  = encodeURIComponent(`Contatto dal sito — ${name}`);
       const body     = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
-      window.location.href = `mailto:mauro.loggia@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:info@maurologgia.com?subject=${subject}&body=${body}`;
       showFeedback('success', 'Stiamo aprendo il tuo client email come alternativa.');
     } finally {
       submitBtn.disabled = false;

@@ -407,8 +407,11 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
         <h2 class="section__title reveal reveal--delay-1" id="stampa-title">Stampa & Riconoscimenti</h2>
 
         <div class="press__grid">
-          <% stampa.items.forEach(function(item, i) { %>
-          <article class="press__card reveal reveal--delay-<%= i+1 %>">
+          <% stampa.items.forEach(function(item, i) {
+             const hasPdf = item.pdf && String(item.pdf).trim();
+             const tag = hasPdf ? 'a' : 'article';
+          %>
+          <<%= tag %> class="press__card<%= hasPdf ? ' press__card--link' : '' %> reveal reveal--delay-<%= i+1 %>"<% if (hasPdf) { %> href="<%- encodeURI(item.pdf) %>" target="_blank" rel="noopener noreferrer" aria-label="Leggi l'articolo su <%= item.source %> (<%= item.year %>) — apre il PDF in una nuova scheda"<% } %>>
             <div class="press__quote-mark" aria-hidden="true">"</div>
             <blockquote class="press__quote"><%- item.quote %></blockquote>
             <footer class="press__meta">
@@ -416,8 +419,13 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
                 <span class="press__source"><%- item.source %></span>
                 <span class="press__year"> — <%- item.year %></span>
               </div>
+              <% if (hasPdf) { %>
+              <span class="press__link">Leggi l'articolo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+              <% } %>
             </footer>
-          </article>
+          </<%= tag %>>
           <% }); %>
         </div>
       </div>

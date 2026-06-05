@@ -255,7 +255,13 @@ collections:
           - label: "Citazioni stampa"
             name: items
             widget: list
+            summary: "{{fields.source}} — {{fields.year}}"
             fields:
               - { label: "Citazione", name: quote,  widget: text }
               - { label: "Fonte",     name: source, widget: string }
               - { label: "Data/anno", name: year,   widget: string }
+              - label: "PDF dell'articolo (opzionale)"
+                name: pdf
+                widget: file
+                required: false
+                hint: "Collega il PDF dell'articolo dai media: cliccando la card si aprirà il documento in una nuova scheda."

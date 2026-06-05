@@ -125,14 +125,24 @@ const mediaIcons = {
           Torna alla home
         </a>
 
-        <span class="section__label reveal">Immagini</span>
+        <span class="section__label reveal">Foto · Audio · Video</span>
         <h1 class="section__title reveal reveal--delay-1" id="galleria-title">Galleria</h1>
         <% if (galleria.intro) { %>
         <p class="section__intro reveal reveal--delay-2"><%- galleria.intro %></p>
         <% } %>
 
-        <div class="gallery__grid reveal reveal--delay-2">
-          <% galleria.items.forEach(function(item, i) {
+        <%
+          const fotoItems  = galleria.items.filter(function(it){ return (it.type || 'foto') === 'foto'; });
+          const mediaItems = galleria.items.filter(function(it){ return it.type === 'video' || it.type === 'audio'; });
+          const groups = [
+            { title: 'Foto', list: fotoItems },
+            { title: 'Audio & Video', list: mediaItems }
+          ];
+        %>
+        <% groups.forEach(function(group) { if (!group.list.length) return; %>
+        <h2 class="gallery-group__title reveal"><%= group.title %></h2>
+        <div class="gallery__grid reveal">
+          <% group.list.forEach(function(item, i) {
              const m = mediaInfo(item);
              const caption = item.caption || '';
              const hasThumb = !!m.thumb;
@@ -162,6 +172,7 @@ const mediaIcons = {
           </button>
           <% }); %>
         </div>
+        <% }); %>
 
         <div class="gallery-page__footer-back">
           <a href="/" class="btn btn--primary">

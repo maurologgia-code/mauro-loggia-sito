@@ -170,12 +170,9 @@
 
 /* === GALLERIA — LIGHTBOX === */
 (function initGalleryLightbox() {
-  const grid     = document.querySelector('.gallery__grid');
   const lightbox = document.getElementById('lightbox');
-  if (!grid || !lightbox) return;
-
-  const items = Array.from(grid.querySelectorAll('.gallery__item'));
-  if (!items.length) return;
+  const items    = Array.from(document.querySelectorAll('.gallery__item'));
+  if (!lightbox || !items.length) return;
 
   const imgEl     = lightbox.querySelector('.lightbox__img');
   const embedWrap = lightbox.querySelector('.lightbox__embed');

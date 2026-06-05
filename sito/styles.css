@@ -148,7 +148,7 @@ button {
 }
 
 .section {
-  padding-block: var(--space-2xl);
+  padding-block: var(--space-xl);
 }
 
 .section--alt {
@@ -168,11 +168,11 @@ button {
 
 .section__title {
   font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-size: clamp(1.9rem, 1.5rem + 1.5vw, 2.9rem);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .section__intro {
@@ -353,7 +353,7 @@ button {
 
 /* === HERO === */
 .hero {
-  min-height: 100svh;
+  min-height: clamp(520px, 76svh, 720px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -386,7 +386,7 @@ button {
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: var(--text-hero);
+  font-size: clamp(2.5rem, 1.9rem + 2.6vw, 4.25rem);
   font-weight: 600;
   line-height: 0.95;
   letter-spacing: -0.02em;

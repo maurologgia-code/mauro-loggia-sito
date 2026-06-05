@@ -99,11 +99,12 @@
     {
       "type": "video",
       "url": "https://www.youtube.com/watch?v=kV2LqFiNYTo",
-      "caption": "Sigla delle Olimpiadi di Torino 2006"
+      "caption": "Sigla delle Olimpiadi di Torino 2006",
+      "cover": "/images/schermata-2026-06-02-alle-18.46.40.png"
     },
     {
       "type": "video",
-      "cover": "",
+      "cover": "/images/schermata-2026-06-05-alle-09.49.11.png",
       "caption": "Rec e Mix di produzione cantautoriale",
       "url": "https://www.youtube.com/watch?v=9JH5ROfTdJ8"
     }

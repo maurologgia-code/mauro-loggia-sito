@@ -84,9 +84,18 @@
           Torna alla home
         </a>
 
-        <span class="section__label reveal">Percorso</span>
-        <h1 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza & Didattica</h1>
-        <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
+        <div class="subpage-head">
+          <div class="subpage-head__text">
+            <span class="section__label reveal">Percorso</span>
+            <h1 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza &amp; Didattica</h1>
+            <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
+          </div>
+          <div class="subpage-head__media reveal reveal--right">
+            <img src="/images/mauro-loggia-hero.jpeg"
+                 alt="Mauro Loggia, tecnico del suono e formatore"
+                 width="800" height="600" loading="lazy">
+          </div>
+        </div>
 
         <div class="timeline reveal">
           <% esperienza.items.forEach(function(item) { %>

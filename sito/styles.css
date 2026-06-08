@@ -353,16 +353,36 @@ button {
 
 /* === HERO === */
 .hero {
-  min-height: clamp(520px, 76svh, 720px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding-top: var(--nav-height);
   position: relative;
+  min-height: clamp(540px, 80svh, 780px);
+  display: flex;
+  align-items: flex-end;
+  padding-top: var(--nav-height);
   overflow: hidden;
 }
 
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(18, 16, 14, 0.92) 0%, rgba(18, 16, 14, 0.5) 45%, rgba(18, 16, 14, 0.28) 100%),
+    linear-gradient(to right, rgba(18, 16, 14, 0.65) 0%, rgba(18, 16, 14, 0.1) 55%, transparent 100%);
+}
+
 .hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   padding-inline: var(--container-padding);
   padding-block: var(--space-2xl);
   padding-left: max(var(--container-padding), calc((100% - var(--container-max)) / 2 + var(--container-padding)));
@@ -517,6 +537,49 @@ button {
   text-transform: uppercase;
   display: block;
   margin-top: 0.25rem;
+}
+
+/* Hero "cover": testo chiaro sopra la foto d'ambiente */
+.hero--cover .hero__name,
+.hero--cover .hero__claim {
+  color: #F8F5F0;
+}
+
+.hero--cover .hero__role {
+  color: rgba(248, 245, 240, 0.85);
+}
+
+.hero--cover .hero__role span,
+.hero--cover .hero__stat-value {
+  color: var(--color-accent-light);
+}
+
+.hero--cover .hero__desc {
+  color: rgba(248, 245, 240, 0.82);
+}
+
+.hero--cover .hero__eyebrow {
+  color: var(--color-accent-light);
+  background: rgba(229, 187, 106, 0.14);
+  border-color: rgba(229, 187, 106, 0.4);
+}
+
+.hero--cover .hero__stats {
+  border-top-color: rgba(248, 245, 240, 0.22);
+}
+
+.hero--cover .hero__stat-label {
+  color: rgba(248, 245, 240, 0.75);
+}
+
+.hero--cover .btn--outline {
+  color: #F8F5F0;
+  border-color: rgba(248, 245, 240, 0.5);
+}
+
+.hero--cover .btn--outline:hover {
+  background: rgba(248, 245, 240, 0.12);
+  border-color: #F8F5F0;
 }
 
 
@@ -1793,24 +1856,12 @@ button {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    min-height: clamp(480px, 84svh, 720px);
   }
 
   .hero__content {
     padding-block: calc(var(--nav-height) + var(--space-xl)) var(--space-xl);
     padding-left: var(--container-padding);
-    order: 1;
-  }
-
-  .hero__image-wrap {
-    order: 0;
-    min-height: 55svh;
-    height: 55svh;
-  }
-
-  .hero__image-wrap::before {
-    background: linear-gradient(to top, var(--color-bg) 0%, transparent 40%);
   }
 
   .hero__stats {

@@ -120,7 +120,13 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
   <main id="main-content">
 
     <!-- 1. HERO -->
-    <section id="hero" class="hero" aria-label="Introduzione">
+    <section id="hero" class="hero hero--cover" aria-label="Introduzione">
+      <img class="hero__bg"
+           src="<%- encodeURI(hero.photo) %>"
+           alt="<%- hero.photo_alt %>"
+           width="1600" height="900"
+           loading="eager" fetchpriority="high">
+      <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__content">
         <span class="hero__eyebrow"><%- hero.eyebrow %></span>
         <h1 class="hero__name">Mauro<br>Loggia</h1>
@@ -159,12 +165,6 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
         </div>
       </div>
 
-      <div class="hero__image-wrap">
-        <img src="<%- encodeURI(hero.photo) %>"
-             alt="<%- hero.photo_alt %>"
-             width="800" height="900"
-             loading="eager" fetchpriority="high">
-      </div>
     </section>
 
 

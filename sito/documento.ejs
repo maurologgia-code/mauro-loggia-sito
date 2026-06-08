@@ -23,17 +23,18 @@
     </a>
     <span class="doc-bar__title" id="docTitle"></span>
     <a href="#" class="doc-bar__open" id="docOpen" target="_blank" rel="noopener noreferrer">
-      Apri / Scarica
+      Scarica
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
       </svg>
     </a>
   </header>
 
   <main class="doc-viewer">
-    <iframe id="docFrame" title="Documento PDF"></iframe>
+    <div id="docPages" class="doc-pages" aria-live="polite"></div>
+    <div class="doc-loading" id="docLoading">Caricamento del documento…</div>
     <div class="doc-fallback" id="docFallback" hidden>
-      <p class="doc-fallback__text">Il documento non può essere mostrato direttamente qui sul tuo dispositivo.</p>
+      <p class="doc-fallback__text">Non è stato possibile mostrare il documento qui.</p>
       <div class="doc-fallback__actions">
         <a href="#" class="btn btn--primary" id="docOpen2" target="_blank" rel="noopener noreferrer">Apri il documento</a>
         <a href="/" class="btn btn--outline">Torna alla home</a>
@@ -41,41 +42,77 @@
     </div>
   </main>
 
-  <script>
-    (function () {
-      var p = new URLSearchParams(location.search);
-      var src = p.get('src') || '';
-      var titolo = p.get('titolo') || 'Documento';
+  <script type="module">
+    import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4/build/pdf.min.mjs';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4/build/pdf.worker.min.mjs';
 
-      // Sicurezza: accetta solo PDF interni in /images
-      if (!/^\/images\/[^?#]+\.pdf$/i.test(src)) { src = ''; }
+    const params  = new URLSearchParams(location.search);
+    let src        = params.get('src') || '';
+    const titolo   = params.get('titolo') || 'Documento';
 
-      var titleEl = document.getElementById('docTitle');
-      titleEl.textContent = titolo;
+    // Sicurezza: accetta solo PDF interni in /images
+    if (!/^\/images\/[^?#]+\.pdf$/i.test(src)) src = '';
 
-      var frame = document.getElementById('docFrame');
-      var fallback = document.getElementById('docFallback');
-      var open1 = document.getElementById('docOpen');
-      var open2 = document.getElementById('docOpen2');
+    document.getElementById('docTitle').textContent = titolo;
+    if (titolo) document.title = titolo + ' — Mauro Loggia';
 
-      if (src) {
-        frame.src = src;
-        open1.href = src;
-        open2.href = src;
-      } else {
-        frame.hidden = true;
-        fallback.hidden = false;
+    const pagesEl    = document.getElementById('docPages');
+    const loadingEl  = document.getElementById('docLoading');
+    const fallbackEl = document.getElementById('docFallback');
+
+    if (src) {
+      document.getElementById('docOpen').href  = src;
+      document.getElementById('docOpen2').href = src;
+    }
+
+    function showFallback() {
+      loadingEl.hidden = true;
+      pagesEl.hidden = true;
+      fallbackEl.hidden = false;
+    }
+
+    let pdfDoc = null;
+
+    async function renderAll() {
+      if (!pdfDoc) return;
+      pagesEl.innerHTML = '';
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const targetW = Math.min(pagesEl.clientWidth - 1, 900);
+      for (let n = 1; n <= pdfDoc.numPages; n++) {
+        const page = await pdfDoc.getPage(n);
+        const base = page.getViewport({ scale: 1 });
+        const scale = targetW / base.width;
+        const viewport = page.getViewport({ scale: scale * dpr });
+        const canvas = document.createElement('canvas');
+        canvas.className = 'doc-page';
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
+        canvas.style.width = Math.floor(viewport.width / dpr) + 'px';
+        canvas.style.height = Math.floor(viewport.height / dpr) + 'px';
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+        pagesEl.appendChild(canvas);
       }
+    }
 
-      // Sui dispositivi che non mostrano il PDF in iframe (es. iOS Safari),
-      // proponi il fallback con i pulsanti sempre raggiungibili.
-      var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
-                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      if (src && isIOS) {
-        frame.hidden = true;
-        fallback.hidden = false;
+    async function init() {
+      if (!src) { showFallback(); return; }
+      try {
+        pdfDoc = await pdfjsLib.getDocument(src).promise;
+        await renderAll();
+        loadingEl.hidden = true;
+      } catch (e) {
+        showFallback();
       }
-    })();
+    }
+
+    // Ridisegna al cambio di larghezza/orientamento (con debounce)
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => { if (pdfDoc) renderAll(); }, 250);
+    });
+
+    init();
   </script>
 
 </body>

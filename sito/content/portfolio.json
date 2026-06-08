@@ -32,16 +32,6 @@
       "link_url": ""
     },
     {
-      "photo": "/images/Didattica.jpeg",
-      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
-      "badge": "Formazione",
-      "title": "Scuola APM — 25 anni di esperienza",
-      "role": "Direttore Dipartimento · Docente · Progettista",
-      "featured": true,
-      "link_text": "Visita APM",
-      "link_url": "https://scuolaapm.it/"
-    },
-    {
       "photo": "/images/Didattica 2.jpeg",
       "photo_alt": "Mauro Loggia in studio con studenti durante una sessione didattica",
       "badge": "Didattica",
@@ -50,6 +40,16 @@
       "featured": false,
       "link_text": "Scuola APM",
       "link_url": "https://scuolaapm.it/tipologia_nuove_tecnologie/masterclass/"
+    },
+    {
+      "photo": "/images/Didattica.jpeg",
+      "photo_alt": "Mauro Loggia durante una lezione di produzione audio alla Scuola APM",
+      "badge": "Formazione",
+      "title": "Scuola APM — 25 anni di esperienza",
+      "role": "Direttore Dipartimento · Docente · Progettista",
+      "featured": true,
+      "link_text": "Visita APM",
+      "link_url": "https://scuolaapm.it/"
     },
     {
       "photo": "/images/Mauro in studio OK.jpeg",

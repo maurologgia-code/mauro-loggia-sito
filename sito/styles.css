@@ -1306,6 +1306,10 @@ button {
   margin-bottom: 0;
 }
 
+.subpage-head__cv {
+  margin-top: var(--space-md);
+}
+
 .subpage-head__media {
   aspect-ratio: 4 / 3;
   /* sfuma il bordo sinistro della foto nello sfondo */
@@ -1319,6 +1323,8 @@ button {
   object-fit: cover;
   object-position: 72% center;
   display: block;
+  /* angoli arrotondati solo a destra (il lato sinistro è sfumato) */
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 }
 
 /* === LETTORE PDF (/documento) === */

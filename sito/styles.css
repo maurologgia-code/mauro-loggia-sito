@@ -1130,6 +1130,82 @@ button {
   margin-top: var(--space-lg);
 }
 
+/* === DISCOGRAFIA & CREDITI === */
+.disco-group__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.disco-group__title:first-of-type {
+  margin-top: var(--space-lg);
+}
+
+.disco-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.disco-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--t-fast), padding-left var(--t-fast);
+}
+
+.disco-item:hover {
+  color: var(--color-accent);
+  padding-left: var(--space-sm);
+}
+
+.disco-item__main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.disco-item__title {
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.disco-item__role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+.disco-item:hover .disco-item__role {
+  color: inherit;
+}
+
+.disco-item__ext {
+  flex-shrink: 0;
+  opacity: 0.45;
+  transition: opacity var(--t-fast);
+}
+
+.disco-item:hover .disco-item__ext {
+  opacity: 1;
+}
+
+.section__more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
 .gallery__grid {
   columns: 4 240px;
   column-gap: var(--space-sm);

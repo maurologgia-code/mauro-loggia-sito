@@ -1,18 +1,22 @@
-<!DOCTYPE html>
+<%
+  const orderMap = { 'Discografia': 0, 'Audiovisivo': 1, 'Stampa': 2 };
+  const cats = [...new Set(discografia.items.map(i => i.category || 'Discografia'))]
+                 .sort((a, b) => (orderMap[a] ?? 9) - (orderMap[b] ?? 9));
+%><!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Esperienza & Didattica — Mauro Loggia | Sound Engineer, Produttore, Formatore</title>
-  <meta name="description" content="Il percorso professionale di Mauro Loggia: trent'anni tra studio di registrazione, postproduzione televisiva, produzione discografica e formazione alla Scuola APM di Saluzzo.">
+  <title>Discografia & Crediti — Mauro Loggia | Sound Engineer, Produttore</title>
+  <meta name="description" content="Discografia e crediti di Mauro Loggia: produzioni, registrazioni e mix pubblicati. Ogni titolo rimanda alla pubblicazione (Discogs, Spotify, Qobuz e altre).">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://maurologgia.com/esperienza">
+  <link rel="canonical" href="https://maurologgia.com/discografia">
 
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://maurologgia.com/esperienza">
-  <meta property="og:title"       content="Esperienza & Didattica — Mauro Loggia">
-  <meta property="og:description" content="Trent'anni tra studio, broadcast, produzione discografica e formazione.">
+  <meta property="og:url"         content="https://maurologgia.com/discografia">
+  <meta property="og:title"       content="Discografia & Crediti — Mauro Loggia">
+  <meta property="og:description" content="Produzioni, registrazioni e mix pubblicati, con link alle pubblicazioni.">
   <meta property="og:locale"      content="it_IT">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -47,9 +51,9 @@
         <ul class="nav__links" role="list">
           <li><a href="/#chi-sono"   class="nav__link">Chi sono</a></li>
           <li><a href="/#servizi"    class="nav__link">Servizi</a></li>
-          <li><a href="/esperienza"  class="nav__link" aria-current="page">Esperienza</a></li>
+          <li><a href="/esperienza"  class="nav__link">Esperienza</a></li>
           <li><a href="/#portfolio"  class="nav__link">Portfolio</a></li>
-          <li><a href="/discografia" class="nav__link">Discografia</a></li>
+          <li><a href="/discografia" class="nav__link" aria-current="page">Discografia</a></li>
           <li><a href="/galleria"    class="nav__link">Galleria</a></li>
           <li><a href="/#stampa"     class="nav__link">Stampa</a></li>
           <li><a href="/#contatti"   class="nav__cta">Contattami</a></li>
@@ -65,9 +69,9 @@
     <nav id="mobile-nav" class="nav__mobile" aria-label="Menu mobile">
       <a href="/#chi-sono"   class="nav__link">Chi sono</a>
       <a href="/#servizi"    class="nav__link">Servizi</a>
-      <a href="/esperienza"  class="nav__link" aria-current="page">Esperienza</a>
+      <a href="/esperienza"  class="nav__link">Esperienza</a>
       <a href="/#portfolio"  class="nav__link">Portfolio</a>
-      <a href="/discografia" class="nav__link">Discografia</a>
+      <a href="/discografia" class="nav__link" aria-current="page">Discografia</a>
       <a href="/galleria"    class="nav__link">Galleria</a>
       <a href="/#stampa"     class="nav__link">Stampa</a>
       <a href="/#contatti"   class="nav__cta">Contattami</a>
@@ -76,7 +80,7 @@
 
   <main id="main-content">
 
-    <section class="section gallery-page" aria-labelledby="esperienza-title">
+    <section class="section gallery-page" aria-labelledby="discografia-title">
       <div class="container">
 
         <a href="/" class="btn btn--outline gallery-page__back">
@@ -86,42 +90,33 @@
           Torna alla home
         </a>
 
-        <div class="subpage-head">
-          <div class="subpage-head__text">
-            <span class="section__label reveal">Percorso</span>
-            <h1 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza &amp; Didattica</h1>
-            <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
-            <% if (impostazioni.cv_file) { %>
-            <a href="<%= impostazioni.cv_file %>" download class="btn btn--outline subpage-head__cv reveal reveal--delay-2"
-               aria-label="Scarica il curriculum vitae in formato PDF">
-              Scarica CV
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        <span class="section__label reveal">Lavori pubblicati</span>
+        <h1 class="section__title reveal reveal--delay-1" id="discografia-title">Discografia &amp; Crediti</h1>
+        <% if (discografia.intro) { %>
+        <p class="section__intro reveal reveal--delay-2"><%- discografia.intro %></p>
+        <% } %>
+
+        <% cats.forEach(function(cat) {
+           const list = discografia.items.filter(i => (i.category || 'Discografia') === cat);
+           if (!list.length) return;
+        %>
+        <h2 class="disco-group__title reveal"><%= cat %></h2>
+        <ul class="disco-list reveal" role="list">
+          <% list.forEach(function(item) { %>
+          <li>
+            <a class="disco-item" href="<%= item.url %>" target="_blank" rel="noopener noreferrer">
+              <span class="disco-item__main">
+                <span class="disco-item__title"><%- item.title %></span>
+                <% if (item.role) { %><span class="disco-item__role"><%- item.role %></span><% } %>
+              </span>
+              <svg class="disco-item__ext" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
               </svg>
             </a>
-            <% } %>
-          </div>
-          <div class="subpage-head__media reveal">
-            <img src="/images/mauro-loggia-hero.jpeg"
-                 alt="Mauro Loggia, tecnico del suono e formatore"
-                 width="800" height="600" loading="lazy">
-          </div>
-        </div>
-
-        <div class="timeline reveal">
-          <% esperienza.items.forEach(function(item) { %>
-          <article class="timeline__item<%= item.featured ? ' timeline__item--featured' : '' %>">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <% if (item.featured && item.badge) { %>
-            <span class="timeline__badge"><%- item.badge %></span>
-            <% } %>
-            <time class="timeline__year"><%- item.year %></time>
-            <h3 class="timeline__title"><%- item.title %></h3>
-            <p class="timeline__subtitle"><%- item.subtitle %></p>
-            <p class="timeline__desc"><%- item.desc %></p>
-          </article>
+          </li>
           <% }); %>
-        </div>
+        </ul>
+        <% }); %>
 
         <div class="gallery-page__footer-back">
           <a href="/" class="btn btn--primary">

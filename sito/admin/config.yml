@@ -246,6 +246,36 @@ collections:
                     widget: string
                     required: false
 
+      # ─── DISCOGRAFIA ─────────────────────────────────────────────────────────
+      - name: discografia
+        label: "Discografia & Crediti"
+        file: sito/content/discografia.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+            required: false
+          - label: "Voci"
+            name: items
+            widget: list
+            label_singular: "Voce"
+            summary: "{{fields.title}} ({{fields.category}})"
+            hint: "Ogni voce è un lavoro/credito con il link alla pubblicazione. Trascina per riordinare."
+            fields:
+              - label: "Categoria"
+                name: category
+                widget: select
+                default: "Discografia"
+                options: ["Discografia", "Audiovisivo", "Stampa"]
+              - { label: "Titolo", name: title, widget: string }
+              - label: "Ruolo / dettaglio (opzionale)"
+                name: role
+                widget: string
+                required: false
+                hint: "Es. Recording · Mix · Master, oppure l'artista/etichetta."
+              - { label: "Link alla pubblicazione", name: url, widget: string }
+
       # ─── STAMPA ──────────────────────────────────────────────────────────────
       - name: stampa
         label: "Stampa & Riconoscimenti"

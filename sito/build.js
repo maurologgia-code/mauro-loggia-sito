@@ -12,6 +12,7 @@ const data = {
   esperienza: JSON.parse(fs.readFileSync(path.join(content, 'esperienza.json'),'utf8')),
   portfolio:  JSON.parse(fs.readFileSync(path.join(content, 'portfolio.json'), 'utf8')),
   galleria:   JSON.parse(fs.readFileSync(path.join(content, 'galleria.json'),  'utf8')),
+  discografia: JSON.parse(fs.readFileSync(path.join(content, 'discografia.json'), 'utf8')),
   stampa:     JSON.parse(fs.readFileSync(path.join(content, 'stampa.json'),    'utf8')),
   impostazioni: JSON.parse(fs.readFileSync(path.join(content, 'impostazioni.json'), 'utf8')),
   encodeURI,
@@ -22,6 +23,7 @@ const pages = [
   { template: 'template.ejs',   output: 'index.html'      },
   { template: 'galleria.ejs',   output: 'galleria.html'   },
   { template: 'esperienza.ejs', output: 'esperienza.html' },
+  { template: 'discografia.ejs', output: 'discografia.html' },
   { template: 'documento.ejs',  output: 'documento.html'  },
 ];
 

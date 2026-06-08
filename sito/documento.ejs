@@ -65,6 +65,15 @@
       document.getElementById('docOpen2').href = src;
     }
 
+    // Su iOS togli la possibilità di scaricare/aprire il PDF a schermo intero
+    // (lì il visualizzatore di sistema prende il sopravvento e si perde il ritorno).
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS) {
+      document.getElementById('docOpen').style.display = 'none';
+      document.getElementById('docOpen2').style.display = 'none';
+    }
+
     function showFallback() {
       loadingEl.hidden = true;
       pagesEl.hidden = true;
@@ -89,7 +98,10 @@
         canvas.height = Math.floor(viewport.height);
         canvas.style.width = Math.floor(viewport.width / dpr) + 'px';
         canvas.style.height = Math.floor(viewport.height / dpr) + 'px';
-        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        await page.render({ canvasContext: ctx, viewport, background: '#ffffff' }).promise;
         pagesEl.appendChild(canvas);
       }
     }

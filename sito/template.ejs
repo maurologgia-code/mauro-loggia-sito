@@ -359,14 +359,16 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
               <span class="portfolio__badge"><%- card.badge %></span>
               <h3 class="portfolio__title"><%- card.title %></h3>
               <p class="portfolio__role"><%- card.role %></p>
-              <% if (card.link_text && card.link_url) { %>
+              <% if (card.link_text && card.link_url) {
+                 const isExt = /^https?:\/\//.test(card.link_url);
+              %>
               <a href="<%- card.link_url %>"
-                 class="portfolio__link"
+                 class="portfolio__link"<% if (isExt) { %>
                  target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="<%- card.link_text %> (apre in una nuova finestra)">
+                 rel="noopener noreferrer"<% } %>
+                 aria-label="<%- card.link_text %><%= isExt ? ' (apre in una nuova finestra)' : '' %>">
                 <%- card.link_text %>
-                <%- extLink %>
+                <% if (isExt) { %><%- extLink %><% } else { %><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><% } %>
               </a>
               <% } %>
             </div>

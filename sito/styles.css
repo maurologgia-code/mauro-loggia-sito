@@ -1293,75 +1293,45 @@ button {
   margin-top: var(--space-2xl);
 }
 
-/* Testata pagina interna: foto a destra sfumata dietro al testo */
+/* Testata pagina interna con foto a fianco del titolo */
 .subpage-head {
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-xl);
   align-items: center;
-  min-height: clamp(300px, 42vh, 460px);
   margin-bottom: var(--space-xl);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.subpage-head__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 75% center;
-}
-
-.subpage-head__scrim {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  /* fallback (tema chiaro) */
-  background: linear-gradient(to right,
-    rgba(248, 245, 240, 1) 0%,
-    rgba(248, 245, 240, 1) 24%,
-    rgba(248, 245, 240, 0.55) 50%,
-    rgba(248, 245, 240, 0) 74%);
-  /* moderno: si adatta al tema */
-  background: linear-gradient(to right,
-    var(--color-bg) 0%,
-    var(--color-bg) 24%,
-    color-mix(in srgb, var(--color-bg) 55%, transparent) 50%,
-    transparent 74%);
-}
-
-.subpage-head__text {
-  position: relative;
-  z-index: 1;
-  max-width: 58%;
-  padding: var(--space-lg) var(--space-xl);
 }
 
 .subpage-head__text .section__intro {
   margin-bottom: 0;
 }
 
+.subpage-head__media {
+  aspect-ratio: 4 / 3;
+  /* sfuma il bordo sinistro della foto nello sfondo */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 26%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 26%);
+}
+
+.subpage-head__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .subpage-head {
-    min-height: clamp(280px, 52vh, 420px);
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
-  .subpage-head__text {
-    max-width: 100%;
-  }
-
-  .subpage-head__scrim {
-    background: linear-gradient(to right,
-      rgba(248, 245, 240, 1) 0%,
-      rgba(248, 245, 240, 1) 32%,
-      rgba(248, 245, 240, 0.72) 62%,
-      rgba(248, 245, 240, 0.35) 100%);
-    background: linear-gradient(to right,
-      var(--color-bg) 0%,
-      var(--color-bg) 32%,
-      color-mix(in srgb, var(--color-bg) 72%, transparent) 62%,
-      color-mix(in srgb, var(--color-bg) 35%, transparent) 100%);
+  .subpage-head__media {
+    aspect-ratio: 16 / 10;
+    max-height: 360px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 18%);
   }
 }
 

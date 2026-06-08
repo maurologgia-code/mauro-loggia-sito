@@ -78,6 +78,11 @@ collections:
           - label: "Alt text foto"
             name: photo_alt
             widget: string
+          - label: "Link profilo Scuola APM (opzionale)"
+            name: apm_url
+            widget: string
+            required: false
+            hint: "Indirizzo della pagina docente su scuolaapm.it. Lascia vuoto per non mostrare il link."
           - label: "Bio — paragrafo 1"
             name: bio_p1
             widget: text

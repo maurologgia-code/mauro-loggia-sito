@@ -285,6 +285,15 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
               </div>
             </div>
 
+            <% if (chiSono.apm_url) { %>
+            <p class="about__profile-link reveal reveal--delay-1">
+              <a href="<%= chiSono.apm_url %>" target="_blank" rel="noopener noreferrer">
+                Profilo docente — Scuola APM
+                <%- extLink %>
+              </a>
+            </p>
+            <% } %>
+
             <div class="about__stats reveal reveal--delay-2" aria-label="Dati chiave">
               <% chiSono.stats.forEach(function(stat) { %>
               <div class="about__stat">

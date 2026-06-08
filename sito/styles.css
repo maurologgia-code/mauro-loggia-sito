@@ -1206,6 +1206,23 @@ button {
   margin-top: var(--space-lg);
 }
 
+.about__profile-link {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-sm);
+}
+
+.about__profile-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.about__profile-link a:hover {
+  color: var(--color-accent-dark);
+}
+
 .gallery__grid {
   columns: 4 240px;
   column-gap: var(--space-sm);

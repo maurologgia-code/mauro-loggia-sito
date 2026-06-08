@@ -386,7 +386,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
              const hasPdf = item.pdf && String(item.pdf).trim();
              const tag = hasPdf ? 'a' : 'article';
           %>
-          <<%= tag %> class="press__card<%= hasPdf ? ' press__card--link' : '' %> reveal reveal--delay-<%= i+1 %>"<% if (hasPdf) { %> href="<%- encodeURI(item.pdf) %>" aria-label="Leggi l'articolo su <%= item.source %>"<% } %>>
+          <<%= tag %> class="press__card<%= hasPdf ? ' press__card--link' : '' %> reveal reveal--delay-<%= i+1 %>"<% if (hasPdf) { %> href="/documento?src=<%= encodeURIComponent(item.pdf) %>&amp;titolo=<%= encodeURIComponent(item.source) %>" aria-label="Leggi l'articolo su <%= item.source %>"<% } %>>
             <div class="press__quote-mark" aria-hidden="true">"</div>
             <blockquote class="press__quote"><%- item.quote %></blockquote>
             <footer class="press__meta">

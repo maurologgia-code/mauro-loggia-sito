@@ -1321,6 +1321,108 @@ button {
   display: block;
 }
 
+/* === LETTORE PDF (/documento) === */
+.doc-body {
+  margin: 0;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-alt);
+}
+
+.doc-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 0.7rem var(--container-padding);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.doc-bar__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.doc-bar__home:hover { color: var(--color-accent); }
+
+.doc-bar__title {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-bar__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.doc-bar__open:hover { color: var(--color-accent-dark); }
+
+.doc-viewer {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+}
+
+.doc-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.doc-viewer iframe[hidden] { display: none; }
+
+.doc-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.doc-fallback[hidden] { display: none; }
+
+.doc-fallback__text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+
+.doc-fallback__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 540px) {
+  .doc-bar__title { display: none; }
+}
+
 @media (max-width: 768px) {
   .subpage-head {
     grid-template-columns: 1fr;

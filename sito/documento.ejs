@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento — Mauro Loggia</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="doc-body">
+
+  <header class="doc-bar">
+    <a href="/" class="doc-bar__home">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Torna alla home
+    </a>
+    <span class="doc-bar__title" id="docTitle"></span>
+    <a href="#" class="doc-bar__open" id="docOpen" target="_blank" rel="noopener noreferrer">
+      Apri / Scarica
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+    </a>
+  </header>
+
+  <main class="doc-viewer">
+    <iframe id="docFrame" title="Documento PDF"></iframe>
+    <div class="doc-fallback" id="docFallback" hidden>
+      <p class="doc-fallback__text">Il documento non può essere mostrato direttamente qui sul tuo dispositivo.</p>
+      <div class="doc-fallback__actions">
+        <a href="#" class="btn btn--primary" id="docOpen2" target="_blank" rel="noopener noreferrer">Apri il documento</a>
+        <a href="/" class="btn btn--outline">Torna alla home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var src = p.get('src') || '';
+      var titolo = p.get('titolo') || 'Documento';
+
+      // Sicurezza: accetta solo PDF interni in /images
+      if (!/^\/images\/[^?#]+\.pdf$/i.test(src)) { src = ''; }
+
+      var titleEl = document.getElementById('docTitle');
+      titleEl.textContent = titolo;
+
+      var frame = document.getElementById('docFrame');
+      var fallback = document.getElementById('docFallback');
+      var open1 = document.getElementById('docOpen');
+      var open2 = document.getElementById('docOpen2');
+
+      if (src) {
+        frame.src = src;
+        open1.href = src;
+        open2.href = src;
+      } else {
+        frame.hidden = true;
+        fallback.hidden = false;
+      }
+
+      // Sui dispositivi che non mostrano il PDF in iframe (es. iOS Safari),
+      // proponi il fallback con i pulsanti sempre raggiungibili.
+      var isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (src && isIOS) {
+        frame.hidden = true;
+        fallback.hidden = false;
+      }
+    })();
+  </script>
+
+</body>
+</html>

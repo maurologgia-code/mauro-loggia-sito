@@ -22,6 +22,7 @@ const pages = [
   { template: 'template.ejs',   output: 'index.html'      },
   { template: 'galleria.ejs',   output: 'galleria.html'   },
   { template: 'esperienza.ejs', output: 'esperienza.html' },
+  { template: 'documento.ejs',  output: 'documento.html'  },
 ];
 
 pages.forEach(({ template, output }) => {

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Esperienza & Didattica — Mauro Loggia | Sound Engineer, Produttore, Formatore</title>
+  <meta name="description" content="Il percorso professionale di Mauro Loggia: trent'anni tra studio di registrazione, postproduzione televisiva, produzione discografica e formazione alla Scuola APM di Saluzzo.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maurologgia.com/esperienza">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://maurologgia.com/esperienza">
+  <meta property="og:title"       content="Esperienza & Didattica — Mauro Loggia">
+  <meta property="og:description" content="Trent'anni tra studio, broadcast, produzione discografica e formazione.">
+  <meta property="og:locale"      content="it_IT">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+  </noscript>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+  <!-- NAVIGAZIONE -->
+  <header class="nav nav--solid" role="banner">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Mauro Loggia — torna alla home">
+        Mauro Loggia<span>.</span>
+      </a>
+      <nav aria-label="Navigazione principale">
+        <ul class="nav__links" role="list">
+          <li><a href="/#chi-sono"   class="nav__link">Chi sono</a></li>
+          <li><a href="/#servizi"    class="nav__link">Servizi</a></li>
+          <li><a href="/esperienza"  class="nav__link" aria-current="page">Esperienza</a></li>
+          <li><a href="/#portfolio"  class="nav__link">Portfolio</a></li>
+          <li><a href="/galleria"    class="nav__link">Galleria</a></li>
+          <li><a href="/#stampa"     class="nav__link">Stampa</a></li>
+          <li><a href="/#contatti"   class="nav__cta">Contattami</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle"
+              aria-label="Apri il menu di navigazione"
+              aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav__mobile" aria-label="Menu mobile">
+      <a href="/#chi-sono"   class="nav__link">Chi sono</a>
+      <a href="/#servizi"    class="nav__link">Servizi</a>
+      <a href="/esperienza"  class="nav__link" aria-current="page">Esperienza</a>
+      <a href="/#portfolio"  class="nav__link">Portfolio</a>
+      <a href="/galleria"    class="nav__link">Galleria</a>
+      <a href="/#stampa"     class="nav__link">Stampa</a>
+      <a href="/#contatti"   class="nav__cta">Contattami</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="section gallery-page" aria-labelledby="esperienza-title">
+      <div class="container">
+
+        <a href="/" class="btn btn--outline gallery-page__back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Torna alla home
+        </a>
+
+        <span class="section__label reveal">Percorso</span>
+        <h1 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza & Didattica</h1>
+        <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
+
+        <div class="timeline reveal">
+          <% esperienza.items.forEach(function(item) { %>
+          <article class="timeline__item<%= item.featured ? ' timeline__item--featured' : '' %>">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <% if (item.featured && item.badge) { %>
+            <span class="timeline__badge"><%- item.badge %></span>
+            <% } %>
+            <time class="timeline__year"><%- item.year %></time>
+            <h3 class="timeline__title"><%- item.title %></h3>
+            <p class="timeline__subtitle"><%- item.subtitle %></p>
+            <p class="timeline__desc"><%- item.desc %></p>
+          </article>
+          <% }); %>
+        </div>
+
+        <div class="gallery-page__footer-back">
+          <a href="/" class="btn btn--primary">
+            Torna alla home
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Mauro Loggia</span>
+        <p class="footer__copy">© <span id="footer-year"></span> Mauro Loggia. Tutti i diritti riservati.</p>
+        <nav class="footer__links" aria-label="Link footer">
+          <a href="mailto:info@maurologgia.com" class="footer__link">Email</a>
+          <a href="https://www.linkedin.com/in/mauro-loggia-b241233/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://scuolaapm.it/" class="footer__link"
+             target="_blank" rel="noopener noreferrer">Scuola APM</a>
+        </nav>
+        <a href="/" class="footer__back" aria-label="Torna alla home">
+          Torna alla home
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

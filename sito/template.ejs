@@ -92,7 +92,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
         <ul class="nav__links" role="list">
           <li><a href="#chi-sono"   class="nav__link">Chi sono</a></li>
           <li><a href="#servizi"    class="nav__link">Servizi</a></li>
-          <li><a href="#esperienza" class="nav__link">Esperienza</a></li>
+          <li><a href="/esperienza" class="nav__link">Esperienza</a></li>
           <li><a href="#portfolio"  class="nav__link">Portfolio</a></li>
           <li><a href="/galleria"   class="nav__link">Galleria</a></li>
           <li><a href="#stampa"     class="nav__link">Stampa</a></li>
@@ -109,7 +109,7 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     <nav id="mobile-nav" class="nav__mobile" aria-label="Menu mobile">
       <a href="#chi-sono"   class="nav__link">Chi sono</a>
       <a href="#servizi"    class="nav__link">Servizi</a>
-      <a href="#esperienza" class="nav__link">Esperienza</a>
+      <a href="/esperienza" class="nav__link">Esperienza</a>
       <a href="#portfolio"  class="nav__link">Portfolio</a>
       <a href="/galleria"   class="nav__link">Galleria</a>
       <a href="#stampa"     class="nav__link">Stampa</a>
@@ -335,33 +335,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     </section>
 
 
-    <!-- 4. ESPERIENZA -->
-    <section id="esperienza" class="section" aria-labelledby="esperienza-title">
-      <div class="container">
-        <span class="section__label reveal">Percorso</span>
-        <h2 class="section__title reveal reveal--delay-1" id="esperienza-title">Esperienza & Didattica</h2>
-        <p class="section__intro reveal reveal--delay-2"><%- esperienza.intro %></p>
-
-        <div class="timeline reveal">
-          <% esperienza.items.forEach(function(item) { %>
-          <article class="timeline__item<%= item.featured ? ' timeline__item--featured' : '' %>">
-            <div class="timeline__dot" aria-hidden="true"></div>
-            <% if (item.featured && item.badge) { %>
-            <span class="timeline__badge"><%- item.badge %></span>
-            <% } %>
-            <time class="timeline__year"><%- item.year %></time>
-            <h3 class="timeline__title"><%- item.title %></h3>
-            <p class="timeline__subtitle"><%- item.subtitle %></p>
-            <p class="timeline__desc"><%- item.desc %></p>
-          </article>
-          <% }); %>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 5. PORTFOLIO -->
-    <section id="portfolio" class="section section--alt" aria-labelledby="portfolio-title">
+    <!-- 4. PORTFOLIO -->
+    <section id="portfolio" class="section" aria-labelledby="portfolio-title">
       <div class="container">
         <span class="section__label reveal">Lavori selezionati</span>
         <h2 class="section__title reveal reveal--delay-1" id="portfolio-title">Portfolio</h2>
@@ -400,8 +375,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     </section>
 
 
-    <!-- 6. STAMPA -->
-    <section id="stampa" class="section" aria-labelledby="stampa-title">
+    <!-- 5. STAMPA -->
+    <section id="stampa" class="section section--alt" aria-labelledby="stampa-title">
       <div class="container">
         <span class="section__label reveal">Rassegna stampa</span>
         <h2 class="section__title reveal reveal--delay-1" id="stampa-title">Stampa & Riconoscimenti</h2>
@@ -434,8 +409,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
     </section>
 
 
-    <!-- 7. CONTATTI -->
-    <section id="contatti" class="section section--alt" aria-labelledby="contatti-title">
+    <!-- 6. CONTATTI -->
+    <section id="contatti" class="section" aria-labelledby="contatti-title">
       <div class="container">
         <span class="section__label reveal">Parliamo</span>
         <h2 class="section__title reveal reveal--delay-1" id="contatti-title">Contatti</h2>

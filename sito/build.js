@@ -19,8 +19,9 @@ const data = {
 
 /* Pagine da generare: file template .ejs -> file .html in output */
 const pages = [
-  { template: 'template.ejs',  output: 'index.html'    },
-  { template: 'galleria.ejs',  output: 'galleria.html' },
+  { template: 'template.ejs',   output: 'index.html'      },
+  { template: 'galleria.ejs',   output: 'galleria.html'   },
+  { template: 'esperienza.ejs', output: 'esperienza.html' },
 ];
 
 pages.forEach(({ template, output }) => {

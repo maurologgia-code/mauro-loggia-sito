@@ -255,6 +255,20 @@ button {
   color: var(--color-text);
 }
 
+/* Menu in cima sopra l'hero scuro della home (prima dello scroll): testo chiaro */
+.nav:not(.scrolled):not(.nav--solid) .nav__logo,
+.nav:not(.scrolled):not(.nav--solid) .nav__link {
+  color: #F8F5F0;
+}
+
+.nav:not(.scrolled):not(.nav--solid) .nav__link:hover {
+  color: #ffffff;
+}
+
+.nav:not(.scrolled):not(.nav--solid) .nav__toggle span {
+  background: #F8F5F0;
+}
+
 .nav__link:hover::after {
   width: 100%;
 }

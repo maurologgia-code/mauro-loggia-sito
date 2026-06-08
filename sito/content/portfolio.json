@@ -24,7 +24,7 @@
     {
       "photo": "/images/Registrazione orchestra dal vivo.jpeg",
       "photo_alt": "Registrazione di un'orchestra in una chiesa barocca con arpa in primo piano",
-      "badge": "Live recording",
+      "badge": "Location recording",
       "title": "Registrazioni di ensemble dal vivo",
       "role": "Recording engineer — chiese, teatri, location storiche",
       "featured": false,
@@ -50,16 +50,6 @@
       "featured": false,
       "link_text": "Scuola APM",
       "link_url": "https://scuolaapm.it/tipologia_nuove_tecnologie/masterclass/"
-    },
-    {
-      "photo": "/images/Registrazione Reggia di Venaria 1.jpeg",
-      "photo_alt": "Sessione di registrazione alla Reggia di Venaria per il Late Spring Music Festival",
-      "badge": "Location recording",
-      "title": "Reggia di Venaria Reale",
-      "role": "Recording engineer",
-      "featured": false,
-      "link_text": "",
-      "link_url": ""
     },
     {
       "photo": "/images/Mauro in studio OK.jpeg",

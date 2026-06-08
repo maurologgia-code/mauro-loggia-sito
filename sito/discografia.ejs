@@ -53,7 +53,7 @@
           <li><a href="/#servizi"    class="nav__link">Servizi</a></li>
           <li><a href="/esperienza"  class="nav__link">Esperienza</a></li>
           <li><a href="/#portfolio"  class="nav__link">Portfolio</a></li>
-          <li><a href="/discografia" class="nav__link" aria-current="page">Discografia</a></li>
+          <li><a href="/discografia" class="nav__link" aria-current="page">Crediti</a></li>
           <li><a href="/galleria"    class="nav__link">Galleria</a></li>
           <li><a href="/#stampa"     class="nav__link">Stampa</a></li>
           <li><a href="/#contatti"   class="nav__cta">Contattami</a></li>
@@ -71,7 +71,7 @@
       <a href="/#servizi"    class="nav__link">Servizi</a>
       <a href="/esperienza"  class="nav__link">Esperienza</a>
       <a href="/#portfolio"  class="nav__link">Portfolio</a>
-      <a href="/discografia" class="nav__link" aria-current="page">Discografia</a>
+      <a href="/discografia" class="nav__link" aria-current="page">Crediti</a>
       <a href="/galleria"    class="nav__link">Galleria</a>
       <a href="/#stampa"     class="nav__link">Stampa</a>
       <a href="/#contatti"   class="nav__cta">Contattami</a>
@@ -100,7 +100,9 @@
            const list = discografia.items.filter(i => (i.category || 'Discografia') === cat);
            if (!list.length) return;
         %>
+        <% if (cats.length > 1) { %>
         <h2 class="disco-group__title reveal"><%= cat %></h2>
+        <% } %>
         <ul class="disco-list reveal" role="list">
           <% list.forEach(function(item) { %>
           <li>

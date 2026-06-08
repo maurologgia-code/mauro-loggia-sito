@@ -85,7 +85,7 @@
     async function renderAll() {
       if (!pdfDoc) return;
       pagesEl.innerHTML = '';
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 3);
       const targetW = Math.min(pagesEl.clientWidth - 1, 900);
       for (let n = 1; n <= pdfDoc.numPages; n++) {
         const page = await pdfDoc.getPage(n);

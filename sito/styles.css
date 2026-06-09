@@ -1852,6 +1852,7 @@ button {
 
 .form__submit {
   align-self: flex-start;
+  margin-top: 6px;
 }
 
 /* Feedback form */

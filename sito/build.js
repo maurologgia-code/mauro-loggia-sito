@@ -27,9 +27,22 @@ const pages = [
   { template: 'documento.ejs',  output: 'documento.html'  },
 ];
 
-pages.forEach(({ template, output }) => {
-  const src  = fs.readFileSync(path.join(dir, template), 'utf8');
-  const html = ejs.render(src, data, { filename: path.join(dir, template) });
-  fs.writeFileSync(path.join(dir, output), html, 'utf8');
-  console.log(`✓  ${output} generato`);
-});
+/* Modalità manutenzione: se attiva nel CMS, tutte le pagine mostrano
+   maintenance.html (il pannello /admin resta accessibile per disattivarla). */
+const maintenance = !!(data.impostazioni && data.impostazioni.maintenance);
+
+if (maintenance) {
+  const maint = fs.readFileSync(path.join(dir, 'maintenance.html'), 'utf8');
+  pages.forEach(({ output }) => {
+    fs.writeFileSync(path.join(dir, output), maint, 'utf8');
+    console.log(`⚠  ${output} → pagina di manutenzione`);
+  });
+  console.log('⚠  MODALITÀ MANUTENZIONE ATTIVA');
+} else {
+  pages.forEach(({ template, output }) => {
+    const src  = fs.readFileSync(path.join(dir, template), 'utf8');
+    const html = ejs.render(src, data, { filename: path.join(dir, template) });
+    fs.writeFileSync(path.join(dir, output), html, 'utf8');
+    console.log(`✓  ${output} generato`);
+  });
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sito in manutenzione — Mauro Loggia</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap">
+  <style>
+    :root{
+      --bg:#F8F5F0; --text:#1A1A1A; --muted:#6B6560; --accent:#C89A3A; --line:rgba(26,26,26,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background:var(--bg); color:var(--text);
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      display:flex; align-items:center; justify-content:center;
+      min-height:100svh; padding:2rem; text-align:center;
+    }
+    .box{max-width:560px}
+    .logo{
+      font-family:'Cormorant Garamond',Georgia,serif;
+      font-size:1.9rem; font-weight:600; letter-spacing:.01em; margin-bottom:2.5rem;
+    }
+    .logo span{color:var(--accent)}
+    .wave{display:flex; gap:6px; justify-content:center; align-items:flex-end; height:48px; margin-bottom:2rem}
+    .wave i{width:6px; border-radius:3px; background:var(--accent); opacity:.85;
+      animation:p 1.4s ease-in-out infinite}
+    .wave i:nth-child(1){height:18px;animation-delay:0s}
+    .wave i:nth-child(2){height:34px;animation-delay:.1s}
+    .wave i:nth-child(3){height:48px;animation-delay:.2s}
+    .wave i:nth-child(4){height:28px;animation-delay:.3s}
+    .wave i:nth-child(5){height:40px;animation-delay:.4s}
+    .wave i:nth-child(6){height:20px;animation-delay:.5s}
+    @keyframes p{0%,100%{transform:scaleY(.5);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+    @media (prefers-reduced-motion:reduce){.wave i{animation:none}}
+    h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600;
+       font-size:clamp(2rem,1.5rem+2.5vw,3rem); line-height:1.1; margin-bottom:1rem}
+    p{color:var(--muted); font-size:1.05rem; line-height:1.6; margin-bottom:.5rem}
+    .contact{margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.95rem}
+    .contact a{color:var(--accent); font-weight:600; text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">Mauro Loggia<span>.</span></div>
+    <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <h1>Sito in manutenzione</h1>
+    <p>Stiamo aggiornando il sito.<br>Torneremo online a breve.</p>
+    <p class="contact">Per contatti urgenti: <a href="mailto:info@maurologgia.com">info@maurologgia.com</a></p>
+  </div>
+</body>
+</html>

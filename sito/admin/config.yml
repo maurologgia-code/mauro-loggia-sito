@@ -27,6 +27,11 @@ collections:
             media_folder: "/sito/cv"
             public_folder: "/cv"
             hint: "Carica qui il CV in PDF. Per aggiornarlo in futuro, sostituisci il file da questo campo: i pulsanti 'Scarica CV' del sito si aggiornano da soli."
+          - label: "Modalità manutenzione"
+            name: maintenance
+            widget: boolean
+            default: false
+            hint: "Attiva per mostrare a TUTTI i visitatori la pagina 'Sito in manutenzione' e nascondere i contenuti. Il pannello /admin resta sempre accessibile, così puoi disattivarla. Dopo il salvataggio attendi ~1 minuto per la pubblicazione."
 
       # ─── HERO ────────────────────────────────────────────────────────────────
       - name: hero

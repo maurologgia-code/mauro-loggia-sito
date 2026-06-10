@@ -10,39 +10,24 @@ public_folder: /images
 locale: it
 
 collections:
-  - name: sezioni
-    label: Sezioni del sito
+  # ════════════════════════════════════════════════════════════════════════
+  #  HOME — sezioni della pagina principale
+  # ════════════════════════════════════════════════════════════════════════
+  - name: home
+    label: "Home"
+    label_singular: "Sezione"
     files:
 
-      # ─── IMPOSTAZIONI / DOCUMENTI ────────────────────────────────────────────
-      - name: impostazioni
-        label: "Impostazioni / Documenti"
-        file: sito/content/impostazioni.json
-        format: json
-        fields:
-          - label: "Curriculum Vitae (PDF)"
-            name: cv_file
-            widget: file
-            required: false
-            media_folder: "/sito/cv"
-            public_folder: "/cv"
-            hint: "Carica qui il CV in PDF. Per aggiornarlo in futuro, sostituisci il file da questo campo: i pulsanti 'Scarica CV' del sito si aggiornano da soli."
-          - label: "Modalità manutenzione"
-            name: maintenance
-            widget: boolean
-            default: false
-            hint: "Attiva per mostrare a TUTTI i visitatori la pagina 'Sito in manutenzione' e nascondere i contenuti. Il pannello /admin resta sempre accessibile, così puoi disattivarla. Dopo il salvataggio attendi ~1 minuto per la pubblicazione."
-
-      # ─── HERO ────────────────────────────────────────────────────────────────
+      # ─── HERO ────────────────────────────────────────────────────────────
       - name: hero
         label: "Hero (prima schermata)"
         file: sito/content/hero.json
         format: json
         fields:
-          - label: "Foto principale"
+          - label: "Foto principale (sfondo)"
             name: photo
             widget: image
-            hint: "Foto verticale o quadrata. Soggetto preferibilmente a destra."
+            hint: "Foto d'ambiente orizzontale. Il testo sta in basso a sinistra."
           - label: "Alt text foto"
             name: photo_alt
             widget: string
@@ -66,12 +51,13 @@ collections:
           - label: "Statistiche"
             name: stats
             widget: list
+            summary: "{{fields.value}} — {{fields.label_line1}} {{fields.label_line2}}"
             fields:
-              - { label: "Valore",        name: value,       widget: string }
+              - { label: "Valore",           name: value,       widget: string }
               - { label: "Riga 1 etichetta", name: label_line1, widget: string }
               - { label: "Riga 2 etichetta", name: label_line2, widget: string }
 
-      # ─── CHI SONO ────────────────────────────────────────────────────────────
+      # ─── CHI SONO ────────────────────────────────────────────────────────
       - name: chi-sono
         label: "Chi sono"
         file: sito/content/chi-sono.json
@@ -96,11 +82,12 @@ collections:
           - label: "Statistiche"
             name: stats
             widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
             fields:
               - { label: "Valore",    name: value, widget: string }
               - { label: "Etichetta", name: label, widget: string }
 
-      # ─── SERVIZI ─────────────────────────────────────────────────────────────
+      # ─── SERVIZI ─────────────────────────────────────────────────────────
       - name: servizi
         label: "Servizi"
         file: sito/content/servizi.json
@@ -112,6 +99,8 @@ collections:
           - label: "Card servizi"
             name: cards
             widget: list
+            label_singular: "Servizio"
+            summary: "{{fields.title_line1}} {{fields.title_line2}}"
             fields:
               - label: "Icona"
                 name: icon
@@ -126,33 +115,7 @@ collections:
               - { label: "Descrizione",     name: desc,        widget: text }
               - { label: "Per chi",         name: target,      widget: string }
 
-      # ─── ESPERIENZA ──────────────────────────────────────────────────────────
-      - name: esperienza
-        label: "Esperienza & Didattica"
-        file: sito/content/esperienza.json
-        format: json
-        fields:
-          - label: "Testo introduttivo"
-            name: intro
-            widget: text
-          - label: "Voci della timeline"
-            name: items
-            widget: list
-            fields:
-              - { label: "Periodo",    name: year,     widget: string }
-              - { label: "Titolo",     name: title,    widget: string }
-              - { label: "Sottotitolo (luogo/ruolo)", name: subtitle, widget: string }
-              - { label: "Descrizione", name: desc,    widget: text }
-              - label: "Voce in evidenza?"
-                name: featured
-                widget: boolean
-                default: false
-              - label: "Badge (solo se in evidenza)"
-                name: badge
-                widget: string
-                required: false
-
-      # ─── PORTFOLIO ───────────────────────────────────────────────────────────
+      # ─── PORTFOLIO ───────────────────────────────────────────────────────
       - name: portfolio
         label: "Portfolio"
         file: sito/content/portfolio.json
@@ -164,6 +127,9 @@ collections:
           - label: "Card portfolio"
             name: cards
             widget: list
+            label_singular: "Card"
+            summary: "{{fields.title}}"
+            collapsed: true
             fields:
               - label: "Foto"
                 name: photo
@@ -184,8 +150,115 @@ collections:
                 name: link_url
                 widget: string
                 required: false
+                pattern: ['^(https?://.+|/.+)$', "Usa un indirizzo http(s):// oppure un link interno che inizia con /"]
+                hint: "Esterno (https://…) o interno (es. /discografia)."
 
-      # ─── GALLERIA ────────────────────────────────────────────────────────────
+      # ─── CONTATTI ────────────────────────────────────────────────────────
+      - name: contatti
+        label: "Contatti"
+        file: sito/content/contatti.json
+        format: json
+        fields:
+          - { label: "Titolo", name: heading, widget: string }
+          - { label: "Testo introduttivo", name: subtext, widget: text }
+          - label: "Email"
+            name: email
+            widget: string
+            pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', "Inserisci un indirizzo email valido"]
+          - label: "Luogo (opzionale)"
+            name: location
+            widget: string
+            required: false
+          - label: "Etichetta sezione profili"
+            name: socials_label
+            widget: string
+            required: false
+            default: "Profili online"
+          - label: "Profili / social"
+            name: socials
+            widget: list
+            label_singular: "Profilo"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Etichetta", name: label, widget: string }
+              - label: "Indirizzo (URL)"
+                name: url
+                widget: string
+                pattern: ['^https?://.+', "Inserisci un indirizzo che inizia con http:// o https://"]
+              - label: "Icona"
+                name: icon
+                widget: select
+                default: "website"
+                options:
+                  - { label: "LinkedIn", value: linkedin }
+                  - { label: "Facebook", value: facebook }
+                  - { label: "Instagram", value: instagram }
+                  - { label: "YouTube", value: youtube }
+                  - { label: "Spotify", value: spotify }
+                  - { label: "SoundCloud", value: soundcloud }
+                  - { label: "Discogs", value: discogs }
+                  - { label: "Sito web", value: website }
+                  - { label: "Email", value: email }
+
+      # ─── STAMPA ──────────────────────────────────────────────────────────
+      - name: stampa
+        label: "Stampa & Riconoscimenti"
+        file: sito/content/stampa.json
+        format: json
+        fields:
+          - label: "Citazioni stampa"
+            name: items
+            widget: list
+            label_singular: "Citazione"
+            summary: "{{fields.source}} — {{fields.year}}"
+            fields:
+              - { label: "Citazione", name: quote,  widget: text }
+              - { label: "Fonte",     name: source, widget: string }
+              - { label: "Data/anno", name: year,   widget: string, required: false }
+              - label: "PDF dell'articolo (opzionale)"
+                name: pdf
+                widget: file
+                required: false
+                hint: "Collega il PDF dell'articolo dai media: cliccando la card si apre il documento."
+
+  # ════════════════════════════════════════════════════════════════════════
+  #  PAGINE DEDICATE
+  # ════════════════════════════════════════════════════════════════════════
+  - name: pagine
+    label: "Pagine dedicate"
+    label_singular: "Pagina"
+    files:
+
+      # ─── ESPERIENZA ──────────────────────────────────────────────────────
+      - name: esperienza
+        label: "Esperienza & Didattica"
+        file: sito/content/esperienza.json
+        format: json
+        fields:
+          - label: "Testo introduttivo"
+            name: intro
+            widget: text
+          - label: "Voci della timeline"
+            name: items
+            widget: list
+            label_singular: "Voce"
+            summary: "{{fields.year}} — {{fields.title}}"
+            collapsed: true
+            fields:
+              - { label: "Periodo",    name: year,     widget: string }
+              - { label: "Titolo",     name: title,    widget: string }
+              - { label: "Sottotitolo (luogo/ruolo)", name: subtitle, widget: string }
+              - { label: "Descrizione", name: desc,    widget: text }
+              - label: "Voce in evidenza?"
+                name: featured
+                widget: boolean
+                default: false
+              - label: "Badge (solo se in evidenza)"
+                name: badge
+                widget: string
+                required: false
+
+      # ─── GALLERIA ────────────────────────────────────────────────────────
       - name: galleria
         label: "Galleria multimediale"
         file: sito/content/galleria.json
@@ -200,6 +273,7 @@ collections:
             name: items
             widget: list
             label_singular: "Elemento"
+            collapsed: true
             hint: "Aggiungi Foto, Video o Audio. Trascina per riordinare: vengono mostrati nell'ordine elencato qui."
             types:
               - label: "Foto"
@@ -223,12 +297,13 @@ collections:
                   - label: "Link del video (YouTube o Vimeo)"
                     name: url
                     widget: string
+                    pattern: ['^https?://.+', "Inserisci un indirizzo che inizia con http:// o https://"]
                     hint: "Incolla l'indirizzo, es. https://www.youtube.com/watch?v=… oppure https://vimeo.com/…"
                   - label: "Copertina (opzionale)"
                     name: cover
                     widget: image
                     required: false
-                    hint: "Anteprima mostrata nella griglia. Per i video YouTube viene presa in automatico se la lasci vuota."
+                    hint: "Anteprima nella griglia. Per i video YouTube viene presa in automatico se la lasci vuota."
                   - label: "Didascalia (opzionale)"
                     name: caption
                     widget: string
@@ -241,6 +316,7 @@ collections:
                   - label: "Link SoundCloud"
                     name: url
                     widget: string
+                    pattern: ['^https?://.+', "Inserisci un indirizzo che inizia con http:// o https://"]
                     hint: "Incolla l'indirizzo del brano, es. https://soundcloud.com/utente/titolo"
                   - label: "Copertina (opzionale)"
                     name: cover
@@ -251,7 +327,7 @@ collections:
                     widget: string
                     required: false
 
-      # ─── DISCOGRAFIA ─────────────────────────────────────────────────────────
+      # ─── DISCOGRAFIA ─────────────────────────────────────────────────────
       - name: discografia
         label: "Discografia & Crediti"
         file: sito/content/discografia.json
@@ -266,6 +342,7 @@ collections:
             widget: list
             label_singular: "Voce"
             summary: "{{fields.title}} ({{fields.category}})"
+            collapsed: true
             hint: "Ogni voce è un lavoro/credito con il link alla pubblicazione. Trascina per riordinare."
             fields:
               - label: "Categoria"
@@ -279,24 +356,33 @@ collections:
                 widget: string
                 required: false
                 hint: "Es. Recording · Mix · Master, oppure l'artista/etichetta."
-              - { label: "Link alla pubblicazione", name: url, widget: string }
+              - label: "Link alla pubblicazione"
+                name: url
+                widget: string
+                pattern: ['^https?://.+', "Inserisci un indirizzo che inizia con http:// o https://"]
 
-      # ─── STAMPA ──────────────────────────────────────────────────────────────
-      - name: stampa
-        label: "Stampa & Riconoscimenti"
-        file: sito/content/stampa.json
+  # ════════════════════════════════════════════════════════════════════════
+  #  IMPOSTAZIONI
+  # ════════════════════════════════════════════════════════════════════════
+  - name: impostazioni-gruppo
+    label: "Impostazioni"
+    label_singular: "Impostazione"
+    files:
+
+      - name: impostazioni
+        label: "Documenti & Manutenzione"
+        file: sito/content/impostazioni.json
         format: json
         fields:
-          - label: "Citazioni stampa"
-            name: items
-            widget: list
-            summary: "{{fields.source}} — {{fields.year}}"
-            fields:
-              - { label: "Citazione", name: quote,  widget: text }
-              - { label: "Fonte",     name: source, widget: string }
-              - { label: "Data/anno", name: year,   widget: string }
-              - label: "PDF dell'articolo (opzionale)"
-                name: pdf
-                widget: file
-                required: false
-                hint: "Collega il PDF dell'articolo dai media: cliccando la card si aprirà il documento in una nuova scheda."
+          - label: "Curriculum Vitae (PDF)"
+            name: cv_file
+            widget: file
+            required: false
+            media_folder: "/sito/cv"
+            public_folder: "/cv"
+            hint: "Carica qui il CV in PDF. Per aggiornarlo, sostituisci il file: i pulsanti 'Scarica CV' si aggiornano da soli."
+          - label: "Modalità manutenzione"
+            name: maintenance
+            widget: boolean
+            default: false
+            hint: "Attiva per mostrare a TUTTI la pagina 'Sito in manutenzione' e nascondere i contenuti. Il pannello /admin resta accessibile per disattivarla. Dopo il salvataggio attendi ~1 minuto."

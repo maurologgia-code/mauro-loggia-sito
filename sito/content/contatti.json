@@ -1,0 +1,29 @@
+{
+  "heading": "Lavoriamo insieme",
+  "subtext": "Sono disponibile per consulenze tecniche, produzioni audio, registrazioni live e percorsi formativi personalizzati. Scrivimi per discutere il tuo progetto.",
+  "email": "info@maurologgia.com",
+  "location": "Saluzzo (CN), Piemonte — Italia",
+  "socials_label": "Profili online",
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mauro-loggia-b241233/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/mauro.loggia/",
+      "icon": "facebook"
+    },
+    {
+      "label": "Discogs",
+      "url": "https://www.discogs.com/artist/762119",
+      "icon": "discogs"
+    },
+    {
+      "label": "Scuola APM",
+      "url": "https://scuolaapm.it/",
+      "icon": "website"
+    }
+  ]
+}

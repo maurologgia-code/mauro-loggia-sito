@@ -8,6 +8,19 @@ const svgIcons = {
 };
 
 const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+
+/* Icone social (stile pieno: contact__social-link svg usa fill:currentColor) */
+const socialIcons = {
+  linkedin:  '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+  facebook:  '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+  discogs:   '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
+  website:   '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  instagram: '<path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.24A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.89A4.29 4.29 0 1 1 16.29 12 4.29 4.29 0 0 1 12 16.29zm6.85-11.1a1.54 1.54 0 1 1-1.54-1.54 1.54 1.54 0 0 1 1.54 1.54z"/>',
+  youtube:   '<path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.57V8.43L15.82 12z"/>',
+  spotify:   '<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.32-1.32 9.72-.66 13.44 1.62.36.18.54.78.3 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3z"/>',
+  soundcloud:'<path d="M1.5 16.5A3.5 3.5 0 0 0 5 20h13a4 4 0 0 0 .5-7.97 6.5 6.5 0 0 0-12.6-1.7A3.5 3.5 0 0 0 1.5 16.5z"/>',
+  email:     '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>'
+};
 %><!DOCTYPE html>
 <html lang="it">
 <head>
@@ -456,10 +469,8 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
 
           <div class="contact__info reveal reveal--delay-1">
             <div>
-              <h3 class="contact__heading">Lavoriamo insieme</h3>
-              <p class="contact__subtext">
-                Sono disponibile per consulenze tecniche, produzioni audio, registrazioni live e percorsi formativi personalizzati. Scrivimi per discutere il tuo progetto.
-              </p>
+              <h3 class="contact__heading"><%- contatti.heading %></h3>
+              <p class="contact__subtext"><%- contatti.subtext %></p>
             </div>
             <div>
               <p class="contact__detail">
@@ -467,15 +478,17 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
-                <a href="mailto:info@maurologgia.com">info@maurologgia.com</a>
+                <a href="mailto:<%= contatti.email %>"><%- contatti.email %></a>
               </p>
+              <% if (contatti.location) { %>
               <p class="contact__detail" style="margin-top: var(--space-xs)">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                Saluzzo (CN), Piemonte — Italia
+                <%- contatti.location %>
               </p>
+              <% } %>
             </div>
             <% if (impostazioni.cv_file) { %>
             <div class="contact__cv">
@@ -488,41 +501,20 @@ const extLink = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" str
               </a>
             </div>
             <% } %>
+            <% if (contatti.socials && contatti.socials.length) { %>
             <div>
-              <p class="contact__subtext" style="margin-bottom: var(--space-sm)">Profili online</p>
+              <p class="contact__subtext" style="margin-bottom: var(--space-sm)"><%- contatti.socials_label || 'Profili online' %></p>
               <div class="contact__socials">
-                <a href="https://www.linkedin.com/in/mauro-loggia-b241233/" class="contact__social-link"
-                   target="_blank" rel="noopener noreferrer" aria-label="Profilo LinkedIn (apre in nuova finestra)">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                  </svg>
-                  LinkedIn
+                <% contatti.socials.forEach(function(s) { %>
+                <a href="<%= s.url %>" class="contact__social-link"
+                   target="_blank" rel="noopener noreferrer" aria-label="<%= s.label %> (apre in nuova finestra)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><%- socialIcons[s.icon] || socialIcons.website %></svg>
+                  <%- s.label %>
                 </a>
-                <a href="https://www.facebook.com/mauro.loggia/" class="contact__social-link"
-                   target="_blank" rel="noopener noreferrer" aria-label="Profilo Facebook (apre in nuova finestra)">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                  </svg>
-                  Facebook
-                </a>
-                <a href="https://www.discogs.com/artist/762119" class="contact__social-link"
-                   target="_blank" rel="noopener noreferrer" aria-label="Profilo Discogs (apre in nuova finestra)">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
-                  </svg>
-                  Discogs
-                </a>
-                <a href="https://scuolaapm.it/" class="contact__social-link"
-                   target="_blank" rel="noopener noreferrer" aria-label="Sito Scuola APM (apre in nuova finestra)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="fill:none">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9 22 9 12 15 12 15 22"/>
-                  </svg>
-                  Scuola APM
-                </a>
+                <% }); %>
               </div>
             </div>
+            <% } %>
           </div>
         </div>
       </div>

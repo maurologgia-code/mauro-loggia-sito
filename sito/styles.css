@@ -1072,21 +1072,39 @@ button {
 }
 
 /* Solo dove esiste un puntatore con hover: ruolo e link nascosti
-   finché non si passa sulla card (su touch restano sempre visibili) */
+   finché non si passa sulla card (su touch restano sempre visibili).
+   Gli elementi nascosti vengono anche collassati in altezza, così
+   badge e titolo restano sempre ancorati in basso. */
 @media (hover: hover) and (pointer: fine) {
   .portfolio__card:not(.portfolio__card--featured):not(.portfolio__card--no-img) .portfolio__role,
   .portfolio__card:not(.portfolio__card--featured):not(.portfolio__card--no-img) .portfolio__link {
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity var(--t-base), transform var(--t-base);
+    max-height: 0;
+    min-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transform: translateY(6px);
+    transition: opacity var(--t-base), transform var(--t-base),
+                max-height var(--t-base), margin var(--t-base),
+                min-height var(--t-base);
   }
 
   .portfolio__card:hover .portfolio__role,
+  .portfolio__card:focus-within .portfolio__role {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 3.2rem;
+    margin-bottom: 0.35rem;
+  }
+
   .portfolio__card:hover .portfolio__link,
-  .portfolio__card:focus-within .portfolio__role,
   .portfolio__card:focus-within .portfolio__link {
     opacity: 1;
     transform: translateY(0);
+    max-height: 2.5rem;
+    min-height: 32px;
+    margin-top: 0.15rem;
   }
 }
 

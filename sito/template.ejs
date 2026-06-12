@@ -154,7 +154,7 @@ const socialIcons = {
           <%- hero.role_place %> —
           <span><%- hero.role_year %></span>
         </p>
-        <p class="hero__claim">"<%- hero.claim %>"</p>
+        <p class="hero__claim">“<%- hero.claim %>”</p>
         <p class="hero__desc"><%- hero.description %></p>
 
         <div class="hero__actions">
@@ -423,7 +423,7 @@ const socialIcons = {
              const tag = hasPdf ? 'a' : 'article';
           %>
           <<%= tag %> class="press__card<%= hasPdf ? ' press__card--link' : '' %> reveal reveal--delay-<%= i+1 %>"<% if (hasPdf) { %> href="/documento?src=<%= encodeURIComponent(item.pdf) %>&amp;titolo=<%= encodeURIComponent(item.source) %>" aria-label="Leggi l'articolo su <%= item.source %>"<% } %>>
-            <div class="press__quote-mark" aria-hidden="true">"</div>
+            <div class="press__quote-mark" aria-hidden="true">“</div>
             <blockquote class="press__quote"><%- item.quote %></blockquote>
             <footer class="press__meta">
               <div>

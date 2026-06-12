@@ -136,11 +136,16 @@ const socialIcons = {
 
     <!-- 1. HERO -->
     <section id="hero" class="hero hero--cover" aria-label="Introduzione">
-      <img class="hero__bg"
-           src="<%- encodeURI(hero.photo) %>"
-           alt="<%- hero.photo_alt %>"
-           width="1600" height="900"
-           loading="eager" fetchpriority="high">
+      <picture>
+        <% const heroSet = webpSrcset(hero.photo); if (heroSet) { %>
+        <source type="image/webp" srcset="<%- heroSet %>" sizes="100vw">
+        <% } %>
+        <img class="hero__bg"
+             src="<%- encodeURI(hero.photo) %>"
+             alt="<%- hero.photo_alt %>"
+             width="1600" height="900"
+             loading="eager" fetchpriority="high">
+      </picture>
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__content">
         <span class="hero__eyebrow"><%- hero.eyebrow %></span>
@@ -269,9 +274,15 @@ const socialIcons = {
 
         <div class="about__grid">
           <div class="about__image-wrap reveal reveal--left">
-            <img src="<%- encodeURI(chiSono.photo) %>"
-                 alt="<%- chiSono.photo_alt %>"
-                 width="600" height="800" loading="lazy">
+            <picture>
+              <% const aboutSet = webpSrcset(chiSono.photo); if (aboutSet) { %>
+              <source type="image/webp" srcset="<%- aboutSet %>"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 460px">
+              <% } %>
+              <img src="<%- encodeURI(chiSono.photo) %>"
+                   alt="<%- chiSono.photo_alt %>"
+                   width="600" height="800" loading="lazy">
+            </picture>
           </div>
 
           <div class="about__text">
@@ -354,11 +365,19 @@ const socialIcons = {
              const featuredClass = card.featured ? ' portfolio__card--featured' : '';
           %>
           <article class="portfolio__card<%= featuredClass %> reveal reveal--delay-<%= i === 0 ? '' : delay %>">
-            <img src="<%- encodeURI(card.photo) %>"
-                 alt="<%- card.photo_alt %>"
-                 width="<%= card.featured ? '1200' : '600' %>"
-                 height="<%= card.featured ? '600' : '450' %>"
-                 loading="lazy">
+            <picture>
+              <% const cardSet = webpSrcset(card.photo); if (cardSet) { %>
+              <source type="image/webp" srcset="<%- cardSet %>"
+                      sizes="<%= card.featured
+                        ? '(max-width: 1024px) 100vw, 50vw'
+                        : '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw' %>">
+              <% } %>
+              <img src="<%- encodeURI(card.photo) %>"
+                   alt="<%- card.photo_alt %>"
+                   width="<%= card.featured ? '1200' : '600' %>"
+                   height="<%= card.featured ? '600' : '450' %>"
+                   loading="lazy">
+            </picture>
             <div class="portfolio__overlay">
               <span class="portfolio__badge"><%- card.badge %></span>
               <h3 class="portfolio__title"><%- card.title %></h3>

@@ -96,6 +96,21 @@
 })();
 
 
+/* === WAVEFORM — anima solo quando visibile === */
+(function initWaveform() {
+  const dividers = document.querySelectorAll('.waveform-divider');
+  if (!dividers.length || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+
+  dividers.forEach(d => observer.observe(d));
+})();
+
+
 /* === FORM CONTATTI === */
 (function initContactForm() {
   const form = document.querySelector('.contact__form form');

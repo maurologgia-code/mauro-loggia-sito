@@ -159,7 +159,13 @@ const mediaIcons = {
                   data-caption="<%= caption %>"
                   aria-label="<%= aria %><%= caption ? ': ' + caption : '' %>">
             <% if (hasThumb) { %>
-            <img src="<%- encodeURI(m.thumb) %>" alt="<%= caption || 'Elemento della galleria' %>" loading="lazy">
+            <picture>
+              <% const thumbSet = webpSrcset(m.thumb); if (thumbSet) { %>
+              <source type="image/webp" srcset="<%- thumbSet %>"
+                      sizes="(max-width: 560px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 300px">
+              <% } %>
+              <img src="<%- encodeURI(m.thumb) %>" alt="<%= caption || 'Elemento della galleria' %>" loading="lazy">
+            </picture>
             <% } else { %>
             <span class="gallery__placeholder"><%- mediaIcons[m.kind] || mediaIcons.video %></span>
             <% } %>

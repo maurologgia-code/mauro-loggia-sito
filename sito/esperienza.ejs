@@ -102,9 +102,15 @@
             <% } %>
           </div>
           <div class="subpage-head__media reveal">
-            <img src="/images/mauro-loggia-hero.jpeg"
-                 alt="Mauro Loggia, tecnico del suono e formatore"
-                 width="800" height="600" loading="lazy">
+            <picture>
+              <% const headSet = webpSrcset('/images/mauro-loggia-hero.jpeg'); if (headSet) { %>
+              <source type="image/webp" srcset="<%- headSet %>"
+                      sizes="(max-width: 768px) 100vw, 40vw">
+              <% } %>
+              <img src="/images/mauro-loggia-hero.jpeg"
+                   alt="Mauro Loggia, tecnico del suono e formatore"
+                   width="800" height="600" loading="lazy">
+            </picture>
           </div>
         </div>
 

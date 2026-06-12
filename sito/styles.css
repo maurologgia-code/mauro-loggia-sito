@@ -99,6 +99,12 @@ img, video {
   height: auto;
 }
 
+/* I <picture> non devono introdurre un box: l'img si comporta
+   come figlia diretta del contenitore (object-fit, height 100%, ecc.) */
+picture {
+  display: contents;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -619,18 +625,24 @@ button {
   fill: var(--color-accent);
   opacity: 0.35;
   transform-origin: center bottom;
-  animation: wave-pulse 2.4s ease-in-out infinite;
+  animation: wave-pulse 5.2s ease-in-out infinite;
+  /* in pausa finché il divisore non entra nel viewport (vedi script.js) */
+  animation-play-state: paused;
+}
+
+.waveform-divider.in-view .waveform-bar {
+  animation-play-state: running;
 }
 
 .waveform-bar:nth-child(odd) { animation-delay: 0s; }
-.waveform-bar:nth-child(3n) { animation-delay: 0.3s; }
-.waveform-bar:nth-child(5n) { animation-delay: 0.6s; }
-.waveform-bar:nth-child(7n) { animation-delay: 0.9s; }
-.waveform-bar:nth-child(11n){ animation-delay: 1.2s; }
+.waveform-bar:nth-child(3n) { animation-delay: 0.65s; }
+.waveform-bar:nth-child(5n) { animation-delay: 1.3s; }
+.waveform-bar:nth-child(7n) { animation-delay: 1.95s; }
+.waveform-bar:nth-child(11n){ animation-delay: 2.6s; }
 
 @keyframes wave-pulse {
   0%, 100% { transform: scaleY(1); }
-  50%       { transform: scaleY(0.35); }
+  50%       { transform: scaleY(0.55); }
 }
 
 
@@ -992,36 +1004,60 @@ button {
   transform: scale(1.04);
 }
 
-/* Overlay on hover */
+/* Overlay informazioni: badge e titolo sempre visibili,
+   ruolo e link emergono all'hover (solo su dispositivi con mouse) */
 .portfolio__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(26, 26, 26, 0.92) 0%,
-    rgba(26, 26, 26, 0.55) 55%,
-    transparent 100%
+    rgba(26, 26, 26, 0.88) 0%,
+    rgba(26, 26, 26, 0.38) 48%,
+    transparent 80%
   );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--space-md);
+}
+
+/* Velo aggiuntivo che scurisce la card all'hover (i gradienti
+   non sono animabili: si anima questo layer) */
+.portfolio__overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.3);
   opacity: 0;
   transition: opacity var(--t-base);
+  pointer-events: none;
 }
 
-.portfolio__card--featured .portfolio__overlay {
+.portfolio__card:hover .portfolio__overlay::before {
   opacity: 1;
-  background: linear-gradient(
-    to top,
-    rgba(26, 26, 26, 0.85) 0%,
-    rgba(26, 26, 26, 0.3) 60%,
-    transparent 100%
-  );
 }
 
-.portfolio__card:hover .portfolio__overlay {
-  opacity: 1;
+.portfolio__overlay > * {
+  position: relative; /* sopra il velo ::before */
+}
+
+/* Solo dove esiste un puntatore con hover: ruolo e link nascosti
+   finché non si passa sulla card (su touch restano sempre visibili) */
+@media (hover: hover) and (pointer: fine) {
+  .portfolio__card:not(.portfolio__card--featured):not(.portfolio__card--no-img) .portfolio__role,
+  .portfolio__card:not(.portfolio__card--featured):not(.portfolio__card--no-img) .portfolio__link {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--t-base), transform var(--t-base);
+  }
+
+  .portfolio__card:hover .portfolio__role,
+  .portfolio__card:hover .portfolio__link,
+  .portfolio__card:focus-within .portfolio__role,
+  .portfolio__card:focus-within .portfolio__link {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .portfolio__badge {
@@ -1100,6 +1136,10 @@ button {
   padding: var(--space-md);
   height: 100%;
   justify-content: flex-end;
+}
+
+.portfolio__card--no-img .portfolio__overlay::before {
+  display: none; /* niente velo scuro sulle card testuali */
 }
 
 .portfolio__card--no-img .portfolio__title {
@@ -2174,16 +2214,6 @@ button {
   .portfolio__card--featured {
     grid-column: span 1;
     aspect-ratio: 4 / 3;
-  }
-
-  .portfolio__overlay {
-    opacity: 1;
-    background: linear-gradient(
-      to top,
-      rgba(26, 26, 26, 0.85) 0%,
-      rgba(26, 26, 26, 0.2) 70%,
-      transparent 100%
-    );
   }
 
   .gallery__caption {

@@ -1,6 +1,7 @@
-const ejs  = require('ejs');
-const fs   = require('fs');
-const path = require('path');
+const ejs    = require('ejs');
+const fs     = require('fs');
+const path   = require('path');
+const crypto = require('crypto');
 
 const dir     = __dirname;
 const content = path.join(dir, 'content');
@@ -71,6 +72,65 @@ async function optimizeImages() {
   console.log(`· immagini ottimizzate: ${count}`);
 }
 
+/* ------------------------------------------------------------------ *
+ * Varianti responsive WebP (best-effort).
+ * Per ogni immagine in images/ genera versioni WebP a più larghezze
+ * dentro images/responsive/ (cartella ignorata da git, rigenerata a
+ * ogni build). Restituisce un manifest { '/images/foo.jpg': [{w,url}] }
+ * usato dai template per costruire i srcset. Se 'sharp' non è
+ * disponibile il manifest resta vuoto e i template emettono solo <img>.
+ * ------------------------------------------------------------------ */
+async function buildResponsiveImages() {
+  const manifest = {};
+  let sharp;
+  try { sharp = require('sharp'); }
+  catch { console.log('· sharp non disponibile: varianti responsive saltate'); return manifest; }
+
+  const imgDir = path.join(dir, 'images');
+  if (!fs.existsSync(imgDir)) return manifest;
+  const outDir = path.join(imgDir, 'responsive');
+  fs.mkdirSync(outDir, { recursive: true });
+
+  const exts = ['.jpg', '.jpeg', '.png'];
+  const files = fs.readdirSync(imgDir).filter(f => exts.includes(path.extname(f).toLowerCase()));
+  const WIDTHS = [480, 960, 1600];
+
+  for (const f of files) {
+    const file = path.join(imgDir, f);
+    try {
+      const meta = await sharp(file).metadata();
+      if (!meta.width) continue;
+
+      // nome file pulito (niente spazi/maiuscole) + hash per evitare collisioni
+      const base = path.basename(f, path.extname(f))
+        .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'img';
+      const hash = crypto.createHash('md5').update(f).digest('hex').slice(0, 6);
+      const targets = [...new Set([
+        ...WIDTHS.filter(w => w < meta.width),
+        Math.min(meta.width, WIDTHS[WIDTHS.length - 1]),
+      ])].sort((a, b) => a - b);
+
+      const variants = [];
+      for (const w of targets) {
+        const name = `${base}-${hash}-${w}.webp`;
+        const out = path.join(outDir, name);
+        if (!fs.existsSync(out)) {
+          await sharp(file)
+            .resize({ width: w, withoutEnlargement: true })
+            .webp({ quality: 78 })
+            .toFile(out);
+        }
+        variants.push({ w, url: '/images/responsive/' + name });
+      }
+      if (variants.length) manifest['/images/' + f] = variants;
+    } catch (e) {
+      console.log(`· varianti saltate per ${f}: ${e.message}`);
+    }
+  }
+  console.log(`· varianti WebP generate per ${Object.keys(manifest).length} immagini`);
+  return manifest;
+}
+
 function renderPages() {
   const maintenance = !!(data.impostazioni && data.impostazioni.maintenance);
   if (maintenance) {
@@ -92,5 +152,11 @@ function renderPages() {
 
 (async () => {
   await optimizeImages();
+  const responsiveManifest = await buildResponsiveImages();
+  /* Helper per i template: srcset WebP per un'immagine locale ('' se assente) */
+  data.webpSrcset = (src) => {
+    const variants = responsiveManifest[src];
+    return variants ? variants.map(v => `${encodeURI(v.url)} ${v.w}w`).join(', ') : '';
+  };
   renderPages();
 })();

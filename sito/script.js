@@ -96,6 +96,45 @@
 })();
 
 
+/* === COUNT-UP STATISTICHE === */
+(function initCountUp() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const els = document.querySelectorAll('.hero__stat-value, .about__stat-value');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+
+  const animate = (el) => {
+    const m = el.textContent.trim().match(/^(\d+)(.*)$/);
+    if (!m) return;
+    const target = parseInt(m[1], 10);
+    const suffix = m[2] || '';
+    // per gli anni (es. 2006) non si parte da zero: spin breve
+    const start = target > 100 ? target - 40 : 0;
+    const duration = 1400;
+    const t0 = performance.now();
+
+    const tick = (now) => {
+      const p = Math.min((now - t0) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3); // ease-out cubico
+      el.textContent = Math.round(start + (target - start) * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target); // anima una sola volta
+      }
+    });
+  }, { threshold: 0.6 });
+
+  els.forEach(el => observer.observe(el));
+})();
+
+
 /* === WAVEFORM — anima solo quando visibile === */
 (function initWaveform() {
   const dividers = document.querySelectorAll('.waveform-divider');

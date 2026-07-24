@@ -4,3 +4,10 @@ node_modules/
 
 # Varianti immagini generate dal build (rigenerate su Cloudflare)
 sito/images/responsive/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
